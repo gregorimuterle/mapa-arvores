@@ -1,35 +1,26 @@
 [
   {
     "numero": 47,
-    "nome": "Ipê-amarelo",
-    "nome_cientifico": "Handroanthus albus",
     "ano_fato": 1971,
     "fato": "É inaugurado um novo centro de saúde em Flores da Cunha.",
     "local": "Praça da Bandeira",
     "latitude": -29.0294,
-    "longitude": -51.1817,
-    "foto": "img/arvore_47.jpg"
+    "longitude": -51.1817
   },
   {
     "numero": 12,
-    "nome": "Quaresmeira",
-    "nome_cientifico": "Tibouchina granulosa",
     "ano_fato": 1936,
     "fato": "Inauguração da primeira escola pública municipal de Flores da Cunha.",
     "local": "Parque dos Pioneiros",
     "latitude": -29.0265,
-    "longitude": -51.1843,
-    "foto": "img/arvore_12.jpg"
+    "longitude": -51.1843
   },
   {
     "numero": 73,
-    "nome": "Cerejeira-do-Japão",
-    "nome_cientifico": "Prunus serrulata",
     "ano_fato": 1995,
     "fato": "Realizada a primeira Festa Nacional do Vinho em Flores da Cunha.",
     "local": "Avenida 25 de Julho",
     "latitude": -29.0312,
-    "longitude": -51.1798,
-    "foto": "img/arvore_73.jpg"
+    "longitude": -51.1798
   }
 ]

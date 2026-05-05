@@ -203,7 +203,7 @@
       padding: 24px 24px 28px;
     }
 
-    /* LOCAL — agora é o destaque principal */
+    /* LOCAL — destaque principal */
     .tree-local-label {
       font-size: 11px;
       font-weight: 700;
@@ -217,23 +217,14 @@
       font-weight: 700;
       font-size: 28px;
       line-height: 1.15;
-      margin-bottom: 18px;
-      color: var(--ink);
-    }
-
-    .tree-name-row {
-      font-size: 14px;
-      color: var(--muted);
-      padding-bottom: 18px;
+      margin-bottom: 22px;
+      padding-bottom: 22px;
       border-bottom: 1px solid var(--line);
-    }
-    .tree-name-row strong {
       color: var(--ink);
-      font-weight: 600;
     }
 
     .tree-section {
-      margin-top: 18px;
+      margin-top: 4px;
     }
 
     .tree-label {
@@ -355,7 +346,7 @@
 
     <aside>
       <div class="search-bar">
-        <input type="text" id="search" placeholder="Buscar por número, nome ou local..." />
+        <input type="text" id="search" placeholder="Buscar por número ou local..." />
       </div>
       <div id="panel">
         <div class="panel-empty">
@@ -392,6 +383,11 @@
     let markers = {};
     let activeTree = null;
 
+    // Caminho da foto a partir do número
+    function fotoPath(numero) {
+      return `img/${numero}.jpeg`;
+    }
+
     // Pin SVG (estilo 3 - arredondado)
     function makeIcon(numero) {
       return L.divIcon({
@@ -405,7 +401,7 @@
           </div>
         `,
         iconSize: [36, 48],
-        iconAnchor: [18, 48]  // ponta do pin = ponto exato
+        iconAnchor: [18, 48]
       });
     }
 
@@ -423,9 +419,10 @@
     // Render tree details
     function renderTree(tree) {
       const panel = document.getElementById('panel');
+      const foto = fotoPath(tree.numero);
 
       const imgHtml = `
-        <img src="${tree.foto}" alt="Placa da árvore ${tree.numero}"
+        <img src="${foto}" alt="Placa da árvore ${tree.numero}"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
         <div class="placeholder" style="display:none; flex-direction:column; align-items:center; justify-content:center; width:100%; height:100%;">
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -433,7 +430,7 @@
             <circle cx="8.5" cy="8.5" r="1.5" />
             <path d="M21 15l-5-5L5 21" />
           </svg>
-          <span>Foto em img/${tree.foto.split('/').pop()}</span>
+          <span>Foto em ${foto}</span>
         </div>
       `;
 
@@ -446,10 +443,6 @@
           <div class="tree-body">
             <div class="tree-local-label">Local</div>
             <h2 class="tree-local">${tree.local}</h2>
-
-            <div class="tree-name-row">
-              <strong>${tree.nome}</strong>
-            </div>
 
             <div class="tree-section">
               <div class="tree-label">Fato Histórico</div>
@@ -521,14 +514,13 @@
         `;
       });
 
-    // Search
+    // Search (por número ou local)
     document.getElementById('search').addEventListener('input', (e) => {
       const q = e.target.value.trim().toLowerCase();
       if (!q) return;
 
       const match = trees.find(t =>
         String(t.numero) === q ||
-        t.nome.toLowerCase().includes(q) ||
         t.local.toLowerCase().includes(q)
       );
 
