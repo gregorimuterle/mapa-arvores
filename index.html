@@ -51,11 +51,7 @@
       flex-shrink: 0;
     }
 
-    .brand {
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
-    }
+    .brand { display: flex; align-items: baseline; gap: 16px; }
 
     .brand-name {
       font-family: 'Fraunces', serif;
@@ -63,14 +59,11 @@
       font-size: 24px;
       letter-spacing: 0.5px;
     }
-
     .brand-divider {
-      width: 1px;
-      height: 22px;
+      width: 1px; height: 22px;
       background: rgba(255,255,255,0.4);
       align-self: center;
     }
-
     .brand-title {
       font-family: 'Fraunces', serif;
       font-weight: 500;
@@ -78,13 +71,7 @@
       font-style: italic;
     }
 
-    .stats {
-      display: flex;
-      gap: 18px;
-      font-size: 13px;
-      font-weight: 500;
-    }
-
+    .stats { display: flex; gap: 18px; font-size: 13px; font-weight: 500; }
     .stat {
       background: rgba(255,255,255,0.15);
       padding: 6px 14px;
@@ -94,19 +81,11 @@
     .stat strong { font-weight: 700; }
 
     /* Main layout */
-    .main {
-      display: flex;
-      flex: 1;
-      min-height: 0;
-    }
+    .main { display: flex; flex: 1; min-height: 0; }
 
-    #map {
-      flex: 1;
-      height: 100%;
-      background: #e8e8e6;
-    }
+    #map { flex: 1; height: 100%; background: #e8e8e6; }
 
-    /* GRAYSCALE SUAVE no tile do mapa (estilo C) */
+    /* GRAYSCALE SUAVE no tile do mapa */
     .leaflet-tile-pane {
       filter: grayscale(80%) contrast(0.95) brightness(1.05);
     }
@@ -121,16 +100,8 @@
       flex-direction: column;
     }
 
-    .panel-empty {
-      padding: 40px 28px;
-      text-align: center;
-      color: var(--muted);
-    }
-    .panel-empty .icon {
-      font-size: 48px;
-      margin-bottom: 12px;
-      opacity: 0.4;
-    }
+    .panel-empty { padding: 40px 28px; text-align: center; color: var(--muted); }
+    .panel-empty .icon { font-size: 48px; margin-bottom: 12px; opacity: 0.4; }
     .panel-empty h2 {
       font-family: 'Fraunces', serif;
       font-weight: 700;
@@ -138,16 +109,9 @@
       color: var(--ink);
       margin-bottom: 8px;
     }
-    .panel-empty p {
-      font-size: 14px;
-      line-height: 1.5;
-    }
+    .panel-empty p { font-size: 14px; line-height: 1.5; }
 
-    .tree-card {
-      padding: 0;
-      animation: slideIn 0.3s ease-out;
-    }
-
+    .tree-card { padding: 0; animation: slideIn 0.3s ease-out; }
     @keyframes slideIn {
       from { opacity: 0; transform: translateX(20px); }
       to { opacity: 1; transform: translateX(0); }
@@ -157,143 +121,203 @@
       width: 100%;
       aspect-ratio: 4 / 3;
       background: linear-gradient(135deg, var(--marcolina-light), #fff5ee);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       color: var(--marcolina);
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      position: relative;
-      overflow: hidden;
+      font-size: 13px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;
+      position: relative; overflow: hidden;
     }
-    .tree-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .tree-photo .placeholder {
-      text-align: center;
-      padding: 20px;
-    }
-    .tree-photo .placeholder svg {
-      display: block;
-      margin: 0 auto 8px;
-      opacity: 0.6;
-    }
+    .tree-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .tree-photo .placeholder { text-align: center; padding: 20px; }
+    .tree-photo .placeholder svg { display: block; margin: 0 auto 8px; opacity: 0.6; }
 
     .tree-number-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: var(--marcolina);
-      color: white;
+      position: absolute; top: 14px; left: 14px;
+      background: var(--marcolina); color: white;
       font-family: 'Inter', sans-serif;
-      font-weight: 800;
-      font-size: 20px;
-      letter-spacing: 0.5px;
-      padding: 4px 12px;
-      border-radius: 4px;
+      font-weight: 800; font-size: 20px; letter-spacing: 0.5px;
+      padding: 4px 12px; border-radius: 4px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
-    .tree-body {
-      padding: 24px 24px 28px;
-    }
-
-    /* LOCAL — destaque principal */
+    .tree-body { padding: 24px 24px 28px; }
     .tree-local-label {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--marcolina);
-      margin-bottom: 8px;
+      font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--marcolina); margin-bottom: 8px;
     }
     .tree-local {
       font-family: 'Fraunces', serif;
-      font-weight: 700;
-      font-size: 28px;
-      line-height: 1.15;
-      margin-bottom: 22px;
-      padding-bottom: 22px;
+      font-weight: 700; font-size: 28px; line-height: 1.15;
+      margin-bottom: 22px; padding-bottom: 22px;
       border-bottom: 1px solid var(--line);
       color: var(--ink);
     }
-
-    .tree-section {
-      margin-top: 4px;
-    }
-
+    .tree-section { margin-top: 4px; }
     .tree-label {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--marcolina);
-      margin-bottom: 6px;
+      font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: var(--marcolina); margin-bottom: 6px;
     }
-
-    .tree-value {
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
+    .tree-value { font-size: 15px; line-height: 1.5; }
     .tree-fact-year {
       display: inline-block;
       background: var(--marcolina-light);
       color: var(--marcolina-dark);
-      padding: 3px 10px;
-      border-radius: 12px;
-      font-size: 12px;
-      font-weight: 700;
+      padding: 3px 10px; border-radius: 12px;
+      font-size: 12px; font-weight: 700;
       margin-bottom: 8px;
     }
 
-    /* Search */
-    .search-bar {
-      padding: 14px 20px;
+    /* === SEARCH BAR === */
+    .search-wrap {
+      position: relative;
       background: white;
       border-bottom: 1px solid var(--line);
-      display: flex;
-      gap: 8px;
-      align-items: center;
+      z-index: 500;
+    }
+    .search-bar {
+      padding: 14px 20px;
+      display: flex; gap: 8px; align-items: center;
+      position: relative;
     }
     .search-bar input {
       flex: 1;
       border: 1.5px solid var(--line);
       border-radius: 8px;
-      padding: 9px 14px;
-      font-family: inherit;
-      font-size: 14px;
+      padding: 9px 38px 9px 14px;  /* extra right padding for clear button */
+      font-family: inherit; font-size: 14px;
       outline: none;
       transition: border-color 0.15s;
+      width: 100%;
     }
-    .search-bar input:focus {
-      border-color: var(--marcolina);
+    .search-bar input:focus { border-color: var(--marcolina); }
+
+    .search-clear {
+      position: absolute;
+      right: 28px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 22px; height: 22px;
+      border: none;
+      background: var(--line);
+      border-radius: 50%;
+      color: var(--muted);
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      line-height: 1;
+      padding: 0;
+      transition: background 0.15s, color 0.15s;
+    }
+    .search-clear:hover {
+      background: var(--marcolina);
+      color: white;
+    }
+    .search-clear.visible {
+      display: flex;
     }
 
-    /* === PIN ARREDONDADO (estilo 3) === */
+    /* Dropdown de previews */
+    .search-results {
+      position: absolute;
+      top: 100%;
+      left: 20px;
+      right: 20px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      max-height: 360px;
+      overflow-y: auto;
+      display: none;
+      z-index: 600;
+    }
+    .search-results.open { display: block; }
+
+    .search-result-item {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      transition: background 0.1s;
+    }
+    .search-result-item:last-child { border-bottom: none; }
+    .search-result-item:hover,
+    .search-result-item.kbd-active {
+      background: var(--marcolina-light);
+    }
+
+    .sr-num {
+      flex-shrink: 0;
+      background: var(--marcolina);
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      min-width: 36px;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+    .sr-content { flex: 1; min-width: 0; }
+    .sr-local {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sr-snippet {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.3;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sr-snippet em {
+      color: var(--marcolina-dark);
+      font-style: normal;
+      font-weight: 600;
+    }
+    .sr-content mark {
+      background: var(--marcolina-light);
+      color: var(--marcolina-dark);
+      font-weight: 700;
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+
+    .search-empty {
+      padding: 18px 16px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* === PIN ARREDONDADO === */
     .marcolina-pin {
-      width: 36px;
-      height: 48px;
+      width: 36px; height: 48px;
       position: relative;
       filter: drop-shadow(0 3px 4px rgba(0,0,0,0.25));
       cursor: pointer;
-      transition: transform 0.15s;
+      transition: transform 0.15s, filter 0.25s;
     }
-    .marcolina-pin svg {
-      width: 100%;
-      height: 100%;
-      display: block;
+    .marcolina-pin svg { width: 100%; height: 100%; display: block; }
+    .marcolina-pin svg path {
+      transition: fill 0.25s;
     }
     .marcolina-pin .num {
       position: absolute;
-      top: 9px;
-      left: 0;
-      right: 0;
+      top: 9px; left: 0; right: 0;
       text-align: center;
       color: white;
       font-family: 'Inter', sans-serif;
@@ -301,10 +325,11 @@
       font-size: 14px;
       letter-spacing: 0.3px;
       pointer-events: none;
+      transition: color 0.25s;
     }
-    .marcolina-pin:hover {
-      transform: translateY(-2px) scale(1.05);
-    }
+    .marcolina-pin:hover { transform: translateY(-2px) scale(1.05); }
+
+    /* Pin ativo (selecionado no painel) */
     .marcolina-pin.active {
       transform: translateY(-2px) scale(1.1);
       filter: drop-shadow(0 4px 6px rgba(212, 74, 24, 0.5));
@@ -313,16 +338,32 @@
       fill: var(--marcolina-dark);
     }
 
+    /* Pin atenuado (não bate com a busca) */
+    .marcolina-pin.dimmed svg path {
+      fill: #b8b8b8;
+      stroke: #ededed;
+    }
+    .marcolina-pin.dimmed .num {
+      color: #ededed;
+    }
+    .marcolina-pin.dimmed {
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.15));
+    }
+    /* hover em pin dimmed continua mostrando que é interativo */
+    .marcolina-pin.dimmed:hover svg path {
+      fill: #999;
+    }
+
     /* Mobile */
     @media (max-width: 768px) {
       .main { flex-direction: column; }
       aside {
         width: 100%;
-        max-height: 50vh;
+        max-height: 60vh;
         border-left: none;
         border-top: 1px solid var(--line);
       }
-      #map { min-height: 50vh; }
+      #map { min-height: 40vh; }
       .brand-title { display: none; }
       .stats { gap: 8px; }
       .stat { padding: 4px 10px; font-size: 12px; }
@@ -345,8 +386,12 @@
     <div id="map"></div>
 
     <aside>
-      <div class="search-bar">
-        <input type="text" id="search" placeholder="Buscar por número ou local..." />
+      <div class="search-wrap">
+        <div class="search-bar">
+          <input type="text" id="search" placeholder="Buscar por número, local, fato ou ano..." autocomplete="off" />
+          <button type="button" class="search-clear" id="search-clear" aria-label="Limpar busca">×</button>
+        </div>
+        <div class="search-results" id="search-results"></div>
       </div>
       <div id="panel">
         <div class="panel-empty">
@@ -364,7 +409,7 @@
           crossorigin=""></script>
 
   <script>
-    // Center on Flores da Cunha, RS
+    // ========== Setup do mapa ==========
     const FLORES_DA_CUNHA = [-29.029, -51.181];
 
     const map = L.map('map', {
@@ -373,22 +418,64 @@
       zoomControl: true
     });
 
-    // OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · MARCOLINA',
       maxZoom: 19
     }).addTo(map);
 
+    // Fecha dropdown ao clicar/arrastar no mapa
+    map.on('click dragstart', () => closeDropdown());
+
     let trees = [];
     let markers = {};
     let activeTree = null;
 
-    // Caminho da foto a partir do número
+    // ========== Helpers ==========
     function fotoPath(numero) {
       return `img/${numero}.jpeg`;
     }
 
-    // Pin SVG (estilo 3 - arredondado)
+    // Remove acentos e normaliza pra busca
+    function norm(s) {
+      return String(s ?? '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase();
+    }
+
+    // Escapa HTML pra inserir com segurança
+    function esc(s) {
+      return String(s ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    // Marca o termo no texto (case+acento insensitive)
+    // Retorna HTML com <mark> nos trechos que batem
+    function highlight(text, query) {
+      if (!query) return esc(text);
+      const original = String(text ?? '');
+      const normText = norm(original);
+      const normQuery = norm(query);
+      if (!normQuery) return esc(original);
+
+      let result = '';
+      let i = 0;
+      while (i < original.length) {
+        const idx = normText.indexOf(normQuery, i);
+        if (idx === -1) {
+          result += esc(original.slice(i));
+          break;
+        }
+        result += esc(original.slice(i, idx));
+        result += '<mark>' + esc(original.slice(idx, idx + normQuery.length)) + '</mark>';
+        i = idx + normQuery.length;
+      }
+      return result;
+    }
+
+    // ========== Pin icon ==========
     function makeIcon(numero) {
       return L.divIcon({
         className: '',
@@ -405,7 +492,7 @@
       });
     }
 
-    // Empty state
+    // ========== Painel lateral ==========
     function renderEmpty() {
       document.getElementById('panel').innerHTML = `
         <div class="panel-empty">
@@ -416,7 +503,6 @@
       `;
     }
 
-    // Render tree details
     function renderTree(tree) {
       const panel = document.getElementById('panel');
       const foto = fotoPath(tree.numero);
@@ -442,19 +528,19 @@
           </div>
           <div class="tree-body">
             <div class="tree-local-label">Local</div>
-            <h2 class="tree-local">${tree.local}</h2>
+            <h2 class="tree-local">${esc(tree.local)}</h2>
 
             <div class="tree-section">
               <div class="tree-label">Fato Histórico</div>
               <div class="tree-fact-year">Fato de ${tree.ano_fato}</div>
-              <div class="tree-value">${tree.fato}</div>
+              <div class="tree-value">${esc(tree.fato)}</div>
             </div>
           </div>
         </div>
       `;
     }
 
-    // Highlight active marker
+    // ========== Marker state ==========
     function setActiveMarker(numero) {
       document.querySelectorAll('.marcolina-pin').forEach(el => el.classList.remove('active'));
       if (numero != null) {
@@ -463,7 +549,21 @@
       }
     }
 
-    // Toggle: clicar de novo no mesmo pin recolhe o painel
+    // Aplica/remove dim nos pins. matchSet = Set de números que batem com a busca.
+    // Se matchSet for null, remove o dim de todos.
+    function applyDim(matchSet) {
+      document.querySelectorAll('.marcolina-pin').forEach(el => {
+        const num = Number(el.dataset.num);
+        if (matchSet === null) {
+          el.classList.remove('dimmed');
+        } else if (matchSet.has(num)) {
+          el.classList.remove('dimmed');
+        } else {
+          el.classList.add('dimmed');
+        }
+      });
+    }
+
     function handleMarkerClick(tree) {
       if (activeTree === tree.numero) {
         activeTree = null;
@@ -476,7 +576,214 @@
       }
     }
 
-    // Load JSON and render markers
+    // ========== Busca ==========
+    const searchInput = document.getElementById('search');
+    const searchClear = document.getElementById('search-clear');
+    const searchResults = document.getElementById('search-results');
+    let kbdIndex = -1;
+    let currentMatches = [];
+
+    function isNumericQuery(q) {
+      return /^\d+$/.test(q.trim());
+    }
+
+    // Calcula matches. Retorna { matches, fieldHits } onde fieldHits[numero] = ['local','fato',...]
+    function searchTrees(rawQuery) {
+      const q = rawQuery.trim();
+      if (!q) return { matches: [], fieldHits: {} };
+
+      const numeric = isNumericQuery(q);
+
+      // Trigger: numérico = qualquer comprimento; texto = mín 3 caracteres
+      if (!numeric && q.length < 3) return { matches: [], fieldHits: {} };
+
+      const nq = norm(q);
+      const matches = [];
+      const fieldHits = {};
+
+      trees.forEach(t => {
+        const hits = [];
+
+        if (numeric) {
+          // pra numero, match parcial no início OU "contém" (47, 4, 14, 147 etc)
+          if (String(t.numero).includes(q)) hits.push('numero');
+          if (String(t.ano_fato).includes(q)) hits.push('ano');
+        } else {
+          if (norm(t.local).includes(nq)) hits.push('local');
+          if (norm(t.fato).includes(nq)) hits.push('fato');
+        }
+
+        if (hits.length > 0) {
+          matches.push(t);
+          fieldHits[t.numero] = hits;
+        }
+      });
+
+      return { matches, fieldHits };
+    }
+
+    function renderDropdown(rawQuery, matches, fieldHits) {
+      const q = rawQuery.trim();
+      const numeric = isNumericQuery(q);
+      const tooShort = !numeric && q.length < 3 && q.length > 0;
+
+      if (tooShort) {
+        searchResults.innerHTML = `<div class="search-empty">Digite ao menos 3 letras…</div>`;
+        searchResults.classList.add('open');
+        return;
+      }
+      if (!q) {
+        closeDropdown();
+        return;
+      }
+      if (matches.length === 0) {
+        searchResults.innerHTML = `<div class="search-empty">Nenhum resultado para "${esc(q)}"</div>`;
+        searchResults.classList.add('open');
+        return;
+      }
+
+      const limited = matches.slice(0, 8);
+      searchResults.innerHTML = limited.map((t, i) => {
+        const hits = fieldHits[t.numero] || [];
+        // Snippet: se match foi no fato, mostra trecho do fato; senão mostra o ano
+        let snippet = '';
+        if (hits.includes('fato')) {
+          snippet = highlight(t.fato, q);
+        } else if (hits.includes('ano')) {
+          snippet = `Fato de <em>${highlight(String(t.ano_fato), q)}</em>`;
+        } else {
+          snippet = `Fato de ${t.ano_fato}`;
+        }
+
+        const localHtml = hits.includes('local') ? highlight(t.local, q) : esc(t.local);
+        const numHtml = hits.includes('numero') ? highlight(String(t.numero), q) : esc(String(t.numero));
+
+        return `
+          <div class="search-result-item" data-num="${t.numero}" data-idx="${i}">
+            <div class="sr-num">${numHtml}</div>
+            <div class="sr-content">
+              <div class="sr-local">${localHtml}</div>
+              <div class="sr-snippet">${snippet}</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Hint de "+N resultados" se passou de 8
+      if (matches.length > 8) {
+        searchResults.innerHTML += `<div class="search-empty" style="border-top:1px solid var(--line);">+${matches.length - 8} outros resultados destacados no mapa</div>`;
+      }
+
+      searchResults.classList.add('open');
+      kbdIndex = -1;
+    }
+
+    function closeDropdown() {
+      searchResults.classList.remove('open');
+      kbdIndex = -1;
+    }
+
+    function selectResult(numero) {
+      const tree = trees.find(t => t.numero === Number(numero));
+      if (!tree) return;
+      // Centraliza no pin mantendo zoom atual
+      map.panTo([tree.latitude, tree.longitude], { animate: true });
+      activeTree = tree.numero;
+      renderTree(tree);
+      setActiveMarker(tree.numero);
+      closeDropdown();
+    }
+
+    function clearSearch() {
+      searchInput.value = '';
+      searchClear.classList.remove('visible');
+      closeDropdown();
+      applyDim(null);
+      currentMatches = [];
+    }
+
+    // Input handler
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value;
+      searchClear.classList.toggle('visible', q.length > 0);
+
+      const { matches, fieldHits } = searchTrees(q);
+      currentMatches = matches;
+
+      // Highlight no mapa: dim os que não batem
+      const numeric = isNumericQuery(q.trim());
+      const triggers = q.trim() && (numeric || q.trim().length >= 3);
+
+      if (triggers && matches.length > 0) {
+        applyDim(new Set(matches.map(t => t.numero)));
+      } else if (triggers && matches.length === 0) {
+        // Busca ativa mas sem resultado: tudo dim pra deixar claro que nada bate
+        applyDim(new Set());
+      } else {
+        applyDim(null);
+      }
+
+      renderDropdown(q, matches, fieldHits);
+    });
+
+    // Botão limpar
+    searchClear.addEventListener('click', () => {
+      clearSearch();
+      searchInput.focus();
+    });
+
+    // Teclado: setas, enter, esc
+    searchInput.addEventListener('keydown', (e) => {
+      const items = searchResults.querySelectorAll('.search-result-item');
+
+      if (e.key === 'Escape') {
+        if (searchInput.value) clearSearch();
+        else closeDropdown();
+        return;
+      }
+      if (e.key === 'ArrowDown' && items.length > 0) {
+        e.preventDefault();
+        kbdIndex = (kbdIndex + 1) % items.length;
+        items.forEach(el => el.classList.remove('kbd-active'));
+        items[kbdIndex].classList.add('kbd-active');
+        items[kbdIndex].scrollIntoView({ block: 'nearest' });
+        return;
+      }
+      if (e.key === 'ArrowUp' && items.length > 0) {
+        e.preventDefault();
+        kbdIndex = kbdIndex <= 0 ? items.length - 1 : kbdIndex - 1;
+        items.forEach(el => el.classList.remove('kbd-active'));
+        items[kbdIndex].classList.add('kbd-active');
+        items[kbdIndex].scrollIntoView({ block: 'nearest' });
+        return;
+      }
+      if (e.key === 'Enter' && items.length > 0) {
+        e.preventDefault();
+        const target = kbdIndex >= 0 ? items[kbdIndex] : items[0];
+        selectResult(target.dataset.num);
+      }
+    });
+
+    // Click nos itens (delegação)
+    searchResults.addEventListener('click', (e) => {
+      const item = e.target.closest('.search-result-item');
+      if (item) selectResult(item.dataset.num);
+    });
+
+    // Fecha dropdown ao clicar fora
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.search-wrap')) closeDropdown();
+    });
+
+    // Reabre dropdown ao focar no input se já tem texto
+    searchInput.addEventListener('focus', () => {
+      if (searchInput.value.trim()) {
+        const { matches, fieldHits } = searchTrees(searchInput.value);
+        renderDropdown(searchInput.value, matches, fieldHits);
+      }
+    });
+
+    // ========== Carregamento dos dados ==========
     fetch('arvores.json')
       .then(r => {
         if (!r.ok) throw new Error('Falha ao carregar arvores.json');
@@ -493,7 +800,6 @@
           }).addTo(map);
 
           marker.on('click', () => handleMarkerClick(tree));
-
           markers[tree.numero] = marker;
           bounds.push([tree.latitude, tree.longitude]);
         });
@@ -509,28 +815,10 @@
           <div class="panel-empty">
             <div class="icon">⚠️</div>
             <h2>Erro ao carregar dados</h2>
-            <p>${err.message}<br><br>Verifique se o arquivo <strong>arvores.json</strong> está na mesma pasta que o index.html.</p>
+            <p>${esc(err.message)}<br><br>Verifique se o arquivo <strong>arvores.json</strong> está na mesma pasta que o index.html.</p>
           </div>
         `;
       });
-
-    // Search (por número ou local)
-    document.getElementById('search').addEventListener('input', (e) => {
-      const q = e.target.value.trim().toLowerCase();
-      if (!q) return;
-
-      const match = trees.find(t =>
-        String(t.numero) === q ||
-        t.local.toLowerCase().includes(q)
-      );
-
-      if (match) {
-        map.setView([match.latitude, match.longitude], 18, { animate: true });
-        activeTree = match.numero;
-        renderTree(match);
-        setActiveMarker(match.numero);
-      }
-    });
   </script>
 </body>
 </html>
