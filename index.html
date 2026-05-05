@@ -13,7 +13,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -103,7 +103,12 @@
     #map {
       flex: 1;
       height: 100%;
-      background: #d4e4dc;
+      background: #e8e8e6;
+    }
+
+    /* GRAYSCALE SUAVE no tile do mapa (estilo C) */
+    .leaflet-tile-pane {
+      filter: grayscale(80%) contrast(0.95) brightness(1.05);
     }
 
     /* Side panel */
@@ -185,37 +190,50 @@
       left: 14px;
       background: var(--marcolina);
       color: white;
-      font-family: 'Fraunces', serif;
-      font-weight: 900;
-      font-size: 22px;
-      padding: 4px 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      padding: 4px 12px;
       border-radius: 4px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
     .tree-body {
-      padding: 22px 24px 28px;
+      padding: 24px 24px 28px;
     }
 
-    .tree-name {
+    /* LOCAL — agora é o destaque principal */
+    .tree-local-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--marcolina);
+      margin-bottom: 8px;
+    }
+    .tree-local {
       font-family: 'Fraunces', serif;
       font-weight: 700;
       font-size: 28px;
-      line-height: 1.1;
-      margin-bottom: 4px;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      color: var(--ink);
     }
 
-    .tree-scientific {
-      font-style: italic;
-      color: var(--muted);
+    .tree-name-row {
       font-size: 14px;
-      margin-bottom: 20px;
+      color: var(--muted);
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .tree-name-row strong {
+      color: var(--ink);
+      font-weight: 600;
     }
 
     .tree-section {
       margin-top: 18px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
     }
 
     .tree-label {
@@ -243,13 +261,6 @@
       margin-bottom: 8px;
     }
 
-    .tree-coords {
-      font-family: 'JetBrains Mono', 'Courier New', monospace;
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
     /* Search */
     .search-bar {
       padding: 14px 20px;
@@ -273,32 +284,42 @@
       border-color: var(--marcolina);
     }
 
-    /* Custom marker */
-    .marcolina-marker {
-      background: var(--marcolina);
-      color: white;
-      border: 3px solid white;
-      border-radius: 50%;
-      width: 36px !important;
-      height: 36px !important;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Fraunces', serif;
-      font-weight: 900;
-      font-size: 14px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    /* === PIN ARREDONDADO (estilo 3) === */
+    .marcolina-pin {
+      width: 36px;
+      height: 48px;
+      position: relative;
+      filter: drop-shadow(0 3px 4px rgba(0,0,0,0.25));
       cursor: pointer;
-      transition: transform 0.15s, background 0.15s;
+      transition: transform 0.15s;
     }
-    .marcolina-marker:hover {
-      transform: scale(1.15);
-      background: var(--marcolina-dark);
+    .marcolina-pin svg {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
-    .marcolina-marker.active {
-      background: var(--marcolina-dark);
-      transform: scale(1.2);
-      box-shadow: 0 0 0 4px rgba(253, 99, 45, 0.3), 0 2px 6px rgba(0,0,0,0.3);
+    .marcolina-pin .num {
+      position: absolute;
+      top: 9px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      pointer-events: none;
+    }
+    .marcolina-pin:hover {
+      transform: translateY(-2px) scale(1.05);
+    }
+    .marcolina-pin.active {
+      transform: translateY(-2px) scale(1.1);
+      filter: drop-shadow(0 4px 6px rgba(212, 74, 24, 0.5));
+    }
+    .marcolina-pin.active svg path {
+      fill: var(--marcolina-dark);
     }
 
     /* Mobile */
@@ -369,23 +390,40 @@
 
     let trees = [];
     let markers = {};
-    let activeMarker = null;
+    let activeTree = null;
 
-    // Custom icon factory
+    // Pin SVG (estilo 3 - arredondado)
     function makeIcon(numero) {
       return L.divIcon({
         className: '',
-        html: `<div class="marcolina-marker" data-num="${numero}">${numero}</div>`,
-        iconSize: [36, 36],
-        iconAnchor: [18, 18]
+        html: `
+          <div class="marcolina-pin" data-num="${numero}">
+            <svg viewBox="0 0 36 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 0C8.1 0 0 8.1 0 18c0 4.5 1.7 8.6 4.4 11.7L18 48l13.6-18.3C34.3 26.6 36 22.5 36 18 36 8.1 27.9 0 18 0z" fill="#fd632d" stroke="white" stroke-width="2.5"/>
+            </svg>
+            <span class="num">${numero}</span>
+          </div>
+        `,
+        iconSize: [36, 48],
+        iconAnchor: [18, 48]  // ponta do pin = ponto exato
       });
     }
 
-    // Render side panel
+    // Empty state
+    function renderEmpty() {
+      document.getElementById('panel').innerHTML = `
+        <div class="panel-empty">
+          <div class="icon">🌳</div>
+          <h2>Selecione uma árvore</h2>
+          <p>Clique em qualquer marcador no mapa para ver os detalhes da árvore, o fato histórico e a foto da placa.</p>
+        </div>
+      `;
+    }
+
+    // Render tree details
     function renderTree(tree) {
       const panel = document.getElementById('panel');
 
-      // try image, fall back to placeholder
       const imgHtml = `
         <img src="${tree.foto}" alt="Placa da árvore ${tree.numero}"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
@@ -406,13 +444,11 @@
             ${imgHtml}
           </div>
           <div class="tree-body">
-            <h2 class="tree-name">${tree.nome}</h2>
-            <div class="tree-scientific">${tree.nome_cientifico}</div>
+            <div class="tree-local-label">Local</div>
+            <h2 class="tree-local">${tree.local}</h2>
 
-            <div class="tree-section">
-              <div class="tree-label">Local</div>
-              <div class="tree-value">${tree.local}</div>
-              <div class="tree-coords">${tree.latitude.toFixed(5)}, ${tree.longitude.toFixed(5)}</div>
+            <div class="tree-name-row">
+              <strong>${tree.nome}</strong>
             </div>
 
             <div class="tree-section">
@@ -427,10 +463,24 @@
 
     // Highlight active marker
     function setActiveMarker(numero) {
-      document.querySelectorAll('.marcolina-marker').forEach(el => el.classList.remove('active'));
-      const el = document.querySelector(`.marcolina-marker[data-num="${numero}"]`);
-      if (el) el.classList.add('active');
-      activeMarker = numero;
+      document.querySelectorAll('.marcolina-pin').forEach(el => el.classList.remove('active'));
+      if (numero != null) {
+        const el = document.querySelector(`.marcolina-pin[data-num="${numero}"]`);
+        if (el) el.classList.add('active');
+      }
+    }
+
+    // Toggle: clicar de novo no mesmo pin recolhe o painel
+    function handleMarkerClick(tree) {
+      if (activeTree === tree.numero) {
+        activeTree = null;
+        setActiveMarker(null);
+        renderEmpty();
+      } else {
+        activeTree = tree.numero;
+        renderTree(tree);
+        setActiveMarker(tree.numero);
+      }
     }
 
     // Load JSON and render markers
@@ -449,10 +499,7 @@
             icon: makeIcon(tree.numero)
           }).addTo(map);
 
-          marker.on('click', () => {
-            renderTree(tree);
-            setActiveMarker(tree.numero);
-          });
+          marker.on('click', () => handleMarkerClick(tree));
 
           markers[tree.numero] = marker;
           bounds.push([tree.latitude, tree.longitude]);
@@ -487,6 +534,7 @@
 
       if (match) {
         map.setView([match.latitude, match.longitude], 18, { animate: true });
+        activeTree = match.numero;
         renderTree(match);
         setActiveMarker(match.numero);
       }
