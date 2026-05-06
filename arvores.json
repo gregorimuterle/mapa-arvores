@@ -1,26 +1,738 @@
 [
   {
-    "numero": 47,
-    "ano_fato": 1971,
-    "fato": "É inaugurado um novo centro de saúde em Flores da Cunha.",
-    "local": "Praça da Bandeira",
-    "latitude": -29.0294,
-    "longitude": -51.1817
+    "numero": 1,
+    "ano_fato": 1925,
+    "fato": "Não mapeado",
+    "local": "Praça Nova Trento",
+    "latitude": -29.028111,
+    "longitude": -51.186103
+  },
+  {
+    "numero": 2,
+    "ano_fato": 1926,
+    "fato": "Não mapeado",
+    "local": "Praça da Vindima",
+    "latitude": -29.024404,
+    "longitude": -51.176731
+  },
+  {
+    "numero": 3,
+    "ano_fato": 1927,
+    "fato": "Não mapeado",
+    "local": "São Gotardo - Área Verde Esquina",
+    "latitude": -29.086068,
+    "longitude": -51.190941
+  },
+  {
+    "numero": 4,
+    "ano_fato": 1928,
+    "fato": "Não mapeado",
+    "local": "Centro (Ortobom Diagonal)",
+    "latitude": -29.029354,
+    "longitude": -51.18254
+  },
+  {
+    "numero": 5,
+    "ano_fato": 1929,
+    "fato": "Não mapeado",
+    "local": "Bairro Aparecida - Avenida 25 de Julho 3375",
+    "latitude": -29.044728,
+    "longitude": -51.181021
+  },
+  {
+    "numero": 6,
+    "ano_fato": 1930,
+    "fato": "Não mapeado",
+    "local": "Capela São Valentin",
+    "latitude": -29.072614,
+    "longitude": -51.123998
+  },
+  {
+    "numero": 7,
+    "ano_fato": 1931,
+    "fato": "Não mapeado",
+    "local": "Capela São Caetano",
+    "latitude": -29.059176,
+    "longitude": -51.131512
+  },
+  {
+    "numero": 8,
+    "ano_fato": 1932,
+    "fato": "Não mapeado",
+    "local": "Lado do Fórum",
+    "latitude": -29.035472,
+    "longitude": -51.18246
+  },
+  {
+    "numero": 9,
+    "ano_fato": 1933,
+    "fato": "Não mapeado",
+    "local": "Capela Santa Bárbara",
+    "latitude": -29.049221,
+    "longitude": -51.14293
+  },
+  {
+    "numero": 10,
+    "ano_fato": 1934,
+    "fato": "Não mapeado",
+    "local": "Escola Benjamin",
+    "latitude": -28.985934,
+    "longitude": -51.182941
+  },
+  {
+    "numero": 11,
+    "ano_fato": 1935,
+    "fato": "Não mapeado",
+    "local": "São Gotardo - Área Verde",
+    "latitude": -29.085481,
+    "longitude": -51.190487
   },
   {
     "numero": 12,
     "ano_fato": 1936,
-    "fato": "Inauguração da primeira escola pública municipal de Flores da Cunha.",
-    "local": "Parque dos Pioneiros",
-    "latitude": -29.0265,
-    "longitude": -51.1843
+    "fato": "Não mapeado",
+    "local": "Escola Francisco Zilli",
+    "latitude": -29.062191,
+    "longitude": -51.262422
+  },
+  {
+    "numero": 13,
+    "ano_fato": 1937,
+    "fato": "Não mapeado",
+    "local": "Praça de Otávio Rocha",
+    "latitude": -29.060202,
+    "longitude": -51.261434
+  },
+  {
+    "numero": 14,
+    "ano_fato": 1938,
+    "fato": "Não mapeado",
+    "local": "Bairro Granja União - Rua Ivo Maioli 1044",
+    "latitude": -29.02166,
+    "longitude": -51.1895
+  },
+  {
+    "numero": 15,
+    "ano_fato": 1939,
+    "fato": "Não mapeado",
+    "local": "Parque São Pedro",
+    "latitude": -29.055113,
+    "longitude": -51.190107
+  },
+  {
+    "numero": 16,
+    "ano_fato": 1940,
+    "fato": "Não mapeado",
+    "local": "Bairro União - Mercado",
+    "latitude": -29.033693,
+    "longitude": -51.192312
+  },
+  {
+    "numero": 17,
+    "ano_fato": 1941,
+    "fato": "Não mapeado",
+    "local": "Bairro Videiras - Rua dos Motoristas",
+    "latitude": -29.040065,
+    "longitude": -51.193299
+  },
+  {
+    "numero": 18,
+    "ano_fato": 1942,
+    "fato": "Não mapeado",
+    "local": "Praça Alfredo",
+    "latitude": -29.007861,
+    "longitude": -51.262276
+  },
+  {
+    "numero": 19,
+    "ano_fato": 1943,
+    "fato": "Não mapeado",
+    "local": "Rua Borges 2381",
+    "latitude": -29.037805,
+    "longitude": -51.182279
+  },
+  {
+    "numero": 20,
+    "ano_fato": 1944,
+    "fato": "Não mapeado",
+    "local": "Ginásio Poliesportivo",
+    "latitude": -29.034151,
+    "longitude": -51.18552
+  },
+  {
+    "numero": 21,
+    "ano_fato": 1945,
+    "fato": "Não mapeado",
+    "local": "Capela Monte Bérico",
+    "latitude": -29.004663,
+    "longitude": -51.135762
+  },
+  {
+    "numero": 22,
+    "ano_fato": 1946,
+    "fato": "Não mapeado",
+    "local": "Casarão",
+    "latitude": -29.077334,
+    "longitude": -51.255936
+  },
+  {
+    "numero": 23,
+    "ano_fato": 1947,
+    "fato": "Não mapeado",
+    "local": "Câmara de Vereadores",
+    "latitude": -29.035155,
+    "longitude": -51.183362
+  },
+  {
+    "numero": 24,
+    "ano_fato": 1948,
+    "fato": "Não mapeado",
+    "local": "Praça do Hospital",
+    "latitude": -29.027739,
+    "longitude": -51.178223
+  },
+  {
+    "numero": 25,
+    "ano_fato": 1949,
+    "fato": "Não mapeado",
+    "local": "Mirante Gelain",
+    "latitude": -28.972834,
+    "longitude": -51.26098
+  },
+  {
+    "numero": 26,
+    "ano_fato": 1950,
+    "fato": "Não mapeado",
+    "local": "Eremitério",
+    "latitude": -29.035904,
+    "longitude": -51.168951
+  },
+  {
+    "numero": 28,
+    "ano_fato": 1952,
+    "fato": "Não mapeado",
+    "local": "Garagem da Prefeitura",
+    "latitude": -29.035537,
+    "longitude": -51.183864
+  },
+  {
+    "numero": 29,
+    "ano_fato": 1953,
+    "fato": "Não mapeado",
+    "local": "São Rafael",
+    "latitude": -29.03071,
+    "longitude": -51.188548
+  },
+  {
+    "numero": 30,
+    "ano_fato": 1954,
+    "fato": "Não mapeado",
+    "local": "Capela Restinga",
+    "latitude": -28.979835,
+    "longitude": -51.160919
+  },
+  {
+    "numero": 31,
+    "ano_fato": 1955,
+    "fato": "Não mapeado",
+    "local": "Villa Romana",
+    "latitude": -29.043169,
+    "longitude": -51.164312
+  },
+  {
+    "numero": 32,
+    "ano_fato": 1956,
+    "fato": "Não mapeado",
+    "local": "Praça do Hospital",
+    "latitude": -29.028149,
+    "longitude": -51.177972
+  },
+  {
+    "numero": 33,
+    "ano_fato": 1957,
+    "fato": "Não mapeado",
+    "local": "Praça dos Pinheiros (ao lado da Florense)",
+    "latitude": -29.039982,
+    "longitude": -51.179026
+  },
+  {
+    "numero": 34,
+    "ano_fato": 1958,
+    "fato": "Não mapeado",
+    "local": "Final da Avenida - Parte Norte do Pórtico",
+    "latitude": -29.008641,
+    "longitude": -51.182702
+  },
+  {
+    "numero": 35,
+    "ano_fato": 1959,
+    "fato": "Não mapeado",
+    "local": "Capela Fulina",
+    "latitude": -29.025063,
+    "longitude": -51.135903
+  },
+  {
+    "numero": 36,
+    "ano_fato": 1960,
+    "fato": "Não mapeado",
+    "local": "Escola de Mato Perso",
+    "latitude": -29.095758,
+    "longitude": -51.331953
+  },
+  {
+    "numero": 38,
+    "ano_fato": 1962,
+    "fato": "Não mapeado",
+    "local": "Capela 7 de Setembro (Antiga Escola)",
+    "latitude": -28.997096,
+    "longitude": -51.217341
+  },
+  {
+    "numero": 40,
+    "ano_fato": 1964,
+    "fato": "Não mapeado",
+    "local": "Praça do Parque dos Pinheiros",
+    "latitude": -29.039971,
+    "longitude": -51.171629
+  },
+  {
+    "numero": 41,
+    "ano_fato": 1965,
+    "fato": "Não mapeado",
+    "local": "São Cristóvão (em frente à igreja)",
+    "latitude": -29.054933,
+    "longitude": -51.178893
+  },
+  {
+    "numero": 44,
+    "ano_fato": 1968,
+    "fato": "Não mapeado",
+    "local": "Loteamento Sonda",
+    "latitude": -29.032294,
+    "longitude": -51.200696
+  },
+  {
+    "numero": 45,
+    "ano_fato": 1969,
+    "fato": "Não mapeado",
+    "local": "Avenida 25 de Julho 1402",
+    "latitude": -29.028559,
+    "longitude": -51.18168
+  },
+  {
+    "numero": 46,
+    "ano_fato": 1970,
+    "fato": "Não mapeado",
+    "local": "Estádio",
+    "latitude": -29.026298,
+    "longitude": -51.185086
+  },
+  {
+    "numero": 48,
+    "ano_fato": 1972,
+    "fato": "Não mapeado",
+    "local": "Galo",
+    "latitude": -29.024647,
+    "longitude": -51.176935
+  },
+  {
+    "numero": 49,
+    "ano_fato": 1973,
+    "fato": "Não mapeado",
+    "local": "APAE",
+    "latitude": -29.0289,
+    "longitude": -51.169627
+  },
+  {
+    "numero": 50,
+    "ano_fato": 1974,
+    "fato": "Não mapeado",
+    "local": "Praça Nova Trento",
+    "latitude": -29.028122,
+    "longitude": -51.186127
+  },
+  {
+    "numero": 51,
+    "ano_fato": 1975,
+    "fato": "Não mapeado",
+    "local": "Campin",
+    "latitude": -29.031431,
+    "longitude": -51.161926
+  },
+  {
+    "numero": 52,
+    "ano_fato": 1976,
+    "fato": "Não mapeado",
+    "local": "Escola Rio Branco",
+    "latitude": -29.030375,
+    "longitude": -51.220376
+  },
+  {
+    "numero": 54,
+    "ano_fato": 1978,
+    "fato": "Não mapeado",
+    "local": "Frei Caneca",
+    "latitude": -29.031616,
+    "longitude": -51.182978
+  },
+  {
+    "numero": 55,
+    "ano_fato": 1979,
+    "fato": "Não mapeado",
+    "local": "Poli/Núcleo",
+    "latitude": -29.0346,
+    "longitude": -51.187018
+  },
+  {
+    "numero": 56,
+    "ano_fato": 1980,
+    "fato": "Não mapeado",
+    "local": "Praça de São Pedro",
+    "latitude": -29.055222,
+    "longitude": -51.190105
+  },
+  {
+    "numero": 57,
+    "ano_fato": 1981,
+    "fato": "Não mapeado",
+    "local": "Praça da Linha 80",
+    "latitude": -29.056227,
+    "longitude": -51.219025
+  },
+  {
+    "numero": 58,
+    "ano_fato": 1982,
+    "fato": "Não mapeado",
+    "local": "Rua da Vindima (sentido Parque)",
+    "latitude": -29.025098,
+    "longitude": -51.175536
+  },
+  {
+    "numero": 59,
+    "ano_fato": 1983,
+    "fato": "Não mapeado",
+    "local": "Rua da Vindima",
+    "latitude": -29.025352,
+    "longitude": -51.17627
+  },
+  {
+    "numero": 60,
+    "ano_fato": 1984,
+    "fato": "Não mapeado",
+    "local": "Praça da Bandeira",
+    "latitude": -29.030111,
+    "longitude": -51.182272
+  },
+  {
+    "numero": 61,
+    "ano_fato": 1985,
+    "fato": "Não mapeado",
+    "local": "Escola 1º de Maio",
+    "latitude": -29.025757,
+    "longitude": -51.173166
+  },
+  {
+    "numero": 62,
+    "ano_fato": 1986,
+    "fato": "Não mapeado",
+    "local": "Praça do Monte Bello",
+    "latitude": -29.049457,
+    "longitude": -51.176681
+  },
+  {
+    "numero": 63,
+    "ano_fato": 1987,
+    "fato": "Não mapeado",
+    "local": "Mato Perso - Parquinho",
+    "latitude": -29.095007,
+    "longitude": -51.331574
+  },
+  {
+    "numero": 64,
+    "ano_fato": 1988,
+    "fato": "Não mapeado",
+    "local": "Praça do Bairro União",
+    "latitude": -29.033857,
+    "longitude": -51.19243
+  },
+  {
+    "numero": 65,
+    "ano_fato": 1989,
+    "fato": "Não mapeado",
+    "local": "Escola Horácio Borghetti",
+    "latitude": -29.055143,
+    "longitude": -51.185862
+  },
+  {
+    "numero": 66,
+    "ano_fato": 1990,
+    "fato": "Não mapeado",
+    "local": "Rua em frente à Escola Leonel",
+    "latitude": -29.054061,
+    "longitude": -51.191154
+  },
+  {
+    "numero": 67,
+    "ano_fato": 1991,
+    "fato": "Não mapeado",
+    "local": "Capela Carvalho",
+    "latitude": -29.064753,
+    "longitude": -51.290056
+  },
+  {
+    "numero": 68,
+    "ano_fato": 1992,
+    "fato": "Não mapeado",
+    "local": "Praça Alfredo",
+    "latitude": -29.007872,
+    "longitude": -51.262221
+  },
+  {
+    "numero": 69,
+    "ano_fato": 1993,
+    "fato": "Não mapeado",
+    "local": "Bairro Colina das Flores 1608",
+    "latitude": -29.035402,
+    "longitude": -51.174135
+  },
+  {
+    "numero": 70,
+    "ano_fato": 1994,
+    "fato": "Não mapeado",
+    "local": "Praça do Monte Bello",
+    "latitude": -29.049336,
+    "longitude": -51.176776
+  },
+  {
+    "numero": 71,
+    "ano_fato": 1995,
+    "fato": "Não mapeado",
+    "local": "Subprefeitura de Mato Perso",
+    "latitude": -29.096564,
+    "longitude": -51.332269
+  },
+  {
+    "numero": 72,
+    "ano_fato": 1996,
+    "fato": "Não mapeado",
+    "local": "Posto de Saúde",
+    "latitude": -29.029194,
+    "longitude": -51.180197
   },
   {
     "numero": 73,
-    "ano_fato": 1995,
-    "fato": "Realizada a primeira Festa Nacional do Vinho em Flores da Cunha.",
-    "local": "Avenida 25 de Julho",
-    "latitude": -29.0312,
-    "longitude": -51.1798
+    "ano_fato": 1997,
+    "fato": "Não mapeado",
+    "local": "Lagoa Bella",
+    "latitude": -29.000279,
+    "longitude": -51.195684
+  },
+  {
+    "numero": 74,
+    "ano_fato": 1998,
+    "fato": "Não mapeado",
+    "local": "Galo",
+    "latitude": -29.024589,
+    "longitude": -51.176995
+  },
+  {
+    "numero": 75,
+    "ano_fato": 1999,
+    "fato": "Não mapeado",
+    "local": "Rua da Vindima",
+    "latitude": -29.02435,
+    "longitude": -51.175152
+  },
+  {
+    "numero": 76,
+    "ano_fato": 2000,
+    "fato": "Não mapeado",
+    "local": "Praça do Hospital",
+    "latitude": -29.02784,
+    "longitude": -51.17777
+  },
+  {
+    "numero": 77,
+    "ano_fato": 2001,
+    "fato": "Não mapeado",
+    "local": "Trevo da Keko",
+    "latitude": -29.054158,
+    "longitude": -51.209672
+  },
+  {
+    "numero": 78,
+    "ano_fato": 2002,
+    "fato": "Não mapeado",
+    "local": "Escola Irmã Tarcísia",
+    "latitude": -29.035789,
+    "longitude": -51.186069
+  },
+  {
+    "numero": 79,
+    "ano_fato": 2003,
+    "fato": "Não mapeado",
+    "local": "Capela Santa Libera",
+    "latitude": -28.993603,
+    "longitude": -51.159493
+  },
+  {
+    "numero": 80,
+    "ano_fato": 2004,
+    "fato": "Não mapeado",
+    "local": "Parque da Vindima / Galo - UCS",
+    "latitude": -29.024548,
+    "longitude": -51.176177
+  },
+  {
+    "numero": 81,
+    "ano_fato": 2005,
+    "fato": "Não mapeado",
+    "local": "Campin",
+    "latitude": -29.031489,
+    "longitude": -51.1624
+  },
+  {
+    "numero": 82,
+    "ano_fato": 2006,
+    "fato": "Não mapeado",
+    "local": "Centro de Convivência Frei Salvador",
+    "latitude": -29.035773,
+    "longitude": -51.185072
+  },
+  {
+    "numero": 83,
+    "ano_fato": 2007,
+    "fato": "Não mapeado",
+    "local": "São Rafael",
+    "latitude": -29.031178,
+    "longitude": -51.187745
+  },
+  {
+    "numero": 84,
+    "ano_fato": 2008,
+    "fato": "Não mapeado",
+    "local": "Poliesportivo",
+    "latitude": -29.034279,
+    "longitude": -51.186368
+  },
+  {
+    "numero": 85,
+    "ano_fato": 2009,
+    "fato": "Não mapeado",
+    "local": "Parque São Francisco",
+    "latitude": -29.023325,
+    "longitude": -51.17181
+  },
+  {
+    "numero": 86,
+    "ano_fato": 2010,
+    "fato": "Não mapeado",
+    "local": "Rua Severo Ravisoni - Kashanoski",
+    "latitude": -29.03213,
+    "longitude": -51.184056
+  },
+  {
+    "numero": 87,
+    "ano_fato": 2011,
+    "fato": "Não mapeado",
+    "local": "Frei Caneca",
+    "latitude": -29.031523,
+    "longitude": -51.18273
+  },
+  {
+    "numero": 88,
+    "ano_fato": 2012,
+    "fato": "Não mapeado",
+    "local": "Praça do Bairro São José",
+    "latitude": -29.029221,
+    "longitude": -51.17068
+  },
+  {
+    "numero": 89,
+    "ano_fato": 2013,
+    "fato": "Não mapeado",
+    "local": "Capela do Carmo",
+    "latitude": -28.964374,
+    "longitude": -51.183108
+  },
+  {
+    "numero": 90,
+    "ano_fato": 2014,
+    "fato": "Não mapeado",
+    "local": "Praça do Hospital",
+    "latitude": -29.028078,
+    "longitude": -51.178146
+  },
+  {
+    "numero": 91,
+    "ano_fato": 2015,
+    "fato": "Não mapeado",
+    "local": "Procon - Rua Borges de Medeiros",
+    "latitude": -29.030477,
+    "longitude": -51.182429
+  },
+  {
+    "numero": 92,
+    "ano_fato": 2016,
+    "fato": "Não mapeado",
+    "local": "Estádio",
+    "latitude": -29.026016,
+    "longitude": -51.185104
+  },
+  {
+    "numero": 93,
+    "ano_fato": 2017,
+    "fato": "Não mapeado",
+    "local": "Cemitério",
+    "latitude": -29.032836,
+    "longitude": -51.171526
+  },
+  {
+    "numero": 94,
+    "ano_fato": 2018,
+    "fato": "Não mapeado",
+    "local": "Trevo da Keko",
+    "latitude": -29.054235,
+    "longitude": -51.209171
+  },
+  {
+    "numero": 95,
+    "ano_fato": 2019,
+    "fato": "Não mapeado",
+    "local": "Praça do Hospital",
+    "latitude": -29.027731,
+    "longitude": -51.177848
+  },
+  {
+    "numero": 96,
+    "ano_fato": 2020,
+    "fato": "Não mapeado",
+    "local": "Próximo ao Chefebio",
+    "latitude": -29.034573,
+    "longitude": -51.18339
+  },
+  {
+    "numero": 97,
+    "ano_fato": 2021,
+    "fato": "Não mapeado",
+    "local": "Praça do Hospital",
+    "latitude": -29.027922,
+    "longitude": -51.178003
+  },
+  {
+    "numero": 98,
+    "ano_fato": 2022,
+    "fato": "Não mapeado",
+    "local": "Linha 80",
+    "latitude": -29.056059,
+    "longitude": -51.219354
+  },
+  {
+    "numero": 100,
+    "ano_fato": 2024,
+    "fato": "Não mapeado",
+    "local": "Praça da Bandeira",
+    "latitude": -29.029802,
+    "longitude": -51.181856
   }
 ]
