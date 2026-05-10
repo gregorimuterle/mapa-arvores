@@ -158,7 +158,7 @@
       text-transform: uppercase; letter-spacing: 1px;
       color: var(--marcolina); margin-bottom: 6px;
     }
-    .tree-value { font-size: 15px; line-height: 1.5; white-space: pre-line; }
+    .tree-value { font-size: 15px; line-height: 1.5; }
     .tree-fact-year {
       display: inline-block;
       background: var(--marcolina-light);
@@ -357,6 +357,8 @@
     /* Mobile */
     @media (max-width: 768px) {
       .main { flex-direction: column; }
+
+      /* Painel inferior — sem busca embutida, só os detalhes */
       aside {
         width: 100%;
         max-height: 60vh;
@@ -367,6 +369,34 @@
       .brand-title { display: none; }
       .stats { gap: 8px; }
       .stat { padding: 4px 10px; font-size: 12px; }
+
+      /* Busca sai do painel lateral e fixa no topo, abaixo do header */
+      .search-wrap {
+        position: fixed;
+        top: 0;          /* será ajustado via JS para ficar abaixo do header */
+        left: 0;
+        right: 0;
+        z-index: 900;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      }
+      .search-bar { padding: 10px 14px; }
+
+      /* Dropdown limita altura ao espaço disponível acima do teclado */
+      .search-results {
+        left: 14px;
+        right: 14px;
+        /* Calcula altura máxima baseada na viewport visível menos o que está acima */
+        max-height: min(360px, calc(var(--avail-h, 60vh) - 60px));
+      }
+
+      /* Reordenação no painel: texto antes, foto depois */
+      .tree-card { display: flex; flex-direction: column-reverse; }
+      /* No mobile a borda inferior do "local" some (vira separador entre texto e foto) */
+      .tree-local { border-bottom: none; padding-bottom: 0; margin-bottom: 18px; }
+      /* Foto não precisa do badge no canto superior se ela está embaixo;
+         badge continua aparecendo, mas reposicionamos pra ficar mais discreto */
+      .tree-photo { margin-top: 4px; border-top: 1px solid var(--line); }
     }
   </style>
 </head>
@@ -432,7 +462,7 @@
 
     // ========== Helpers ==========
     function fotoPath(numero) {
-      return `img/${numero}.jpg`;
+      return `img/${numero}.jpeg`;
     }
 
     // Remove acentos e normaliza pra busca
@@ -819,6 +849,52 @@
           </div>
         `;
       });
+
+    // ========== Ajustes de layout no mobile ==========
+    // - Posiciona a barra de busca logo abaixo do header (cuja altura pode variar)
+    // - Atualiza altura disponível pro dropdown quando o teclado virtual abre/fecha
+    const headerEl = document.querySelector('header');
+    const searchWrapEl = document.querySelector('.search-wrap');
+
+    function isMobile() {
+      return window.innerWidth <= 768;
+    }
+
+    function updateMobileLayout() {
+      if (!isMobile()) {
+        searchWrapEl.style.top = '';
+        document.documentElement.style.setProperty('--avail-h', '');
+        return;
+      }
+      // Posiciona barra de busca abaixo do header
+      const headerH = headerEl.getBoundingClientRect().height;
+      searchWrapEl.style.top = headerH + 'px';
+
+      // Espaço vertical útil = viewport visível - header - barra de busca
+      const viewportH = window.visualViewport
+        ? window.visualViewport.height
+        : window.innerHeight;
+      const searchH = searchWrapEl.getBoundingClientRect().height;
+      const avail = Math.max(120, viewportH - headerH - searchH - 12); // 12px de respiro
+      document.documentElement.style.setProperty('--avail-h', avail + 'px');
+    }
+
+    // Eventos relevantes
+    window.addEventListener('resize', updateMobileLayout);
+    window.addEventListener('orientationchange', updateMobileLayout);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', updateMobileLayout);
+      window.visualViewport.addEventListener('scroll', updateMobileLayout);
+    }
+    // Atualiza ao focar/desfocar input (cobre quando teclado abre)
+    searchInput.addEventListener('focus', updateMobileLayout);
+    searchInput.addEventListener('blur', () => {
+      // pequeno delay pra esperar teclado fechar antes de recalcular
+      setTimeout(updateMobileLayout, 150);
+    });
+
+    // Inicialização
+    updateMobileLayout();
   </script>
 </body>
 </html>
