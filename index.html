@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mapa de Árvores - Flores da Cunha | MARCOLINA</title>
+  <title>Mapa · Equipe MARCOLINA · Flores da Cunha</title>
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -27,9 +27,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html, body { height: 100%; overflow: hidden; }
-
     body {
       font-family: 'Inter', sans-serif;
       color: var(--ink);
@@ -50,9 +48,7 @@
       z-index: 1000;
       flex-shrink: 0;
     }
-
     .brand { display: flex; align-items: baseline; gap: 16px; }
-
     .brand-name {
       font-family: 'Fraunces', serif;
       font-weight: 900;
@@ -70,7 +66,6 @@
       font-size: 18px;
       font-style: italic;
     }
-
     .stats { display: flex; gap: 18px; font-size: 13px; font-weight: 500; }
     .stat {
       background: rgba(255,255,255,0.15);
@@ -82,15 +77,11 @@
 
     /* Main layout */
     .main { display: flex; flex: 1; min-height: 0; }
-
     #map { flex: 1; height: 100%; background: #e8e8e6; }
-
-    /* GRAYSCALE SUAVE no tile do mapa */
     .leaflet-tile-pane {
       filter: grayscale(80%) contrast(0.95) brightness(1.05);
     }
 
-    /* Side panel */
     aside {
       width: 380px;
       background: var(--paper);
@@ -100,6 +91,7 @@
       flex-direction: column;
     }
 
+    /* Estado vazio */
     .panel-empty { padding: 40px 28px; text-align: center; color: var(--muted); }
     .panel-empty .icon { font-size: 48px; margin-bottom: 12px; opacity: 0.4; }
     .panel-empty h2 {
@@ -111,55 +103,62 @@
     }
     .panel-empty p { font-size: 14px; line-height: 1.5; }
 
-    .tree-card { padding: 0; animation: slideIn 0.3s ease-out; }
+    /* Card de item selecionado */
+    .item-card { padding: 0; animation: slideIn 0.3s ease-out; }
     @keyframes slideIn {
       from { opacity: 0; transform: translateX(20px); }
       to { opacity: 1; transform: translateX(0); }
     }
 
-    .tree-photo {
+    .item-photo {
       width: 100%;
       aspect-ratio: 4 / 3;
       background: linear-gradient(135deg, var(--marcolina-light), #fff5ee);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--marcolina);
-      font-size: 13px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;
       position: relative; overflow: hidden;
     }
-    .tree-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .tree-photo .placeholder { text-align: center; padding: 20px; }
-    .tree-photo .placeholder svg { display: block; margin: 0 auto 8px; opacity: 0.6; }
+    .item-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    .tree-number-badge {
+    /* Badge da categoria no canto da foto. Cor vem via --cat-color. */
+    .item-badge {
       position: absolute; top: 14px; left: 14px;
-      background: var(--marcolina); color: white;
+      background: var(--cat-color, var(--marcolina));
+      color: white;
       font-family: 'Inter', sans-serif;
       font-weight: 800; font-size: 20px; letter-spacing: 0.5px;
       padding: 4px 12px; border-radius: 4px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
-    .tree-body { padding: 24px 24px 28px; }
-    .tree-local-label {
+    .item-body { padding: 24px 24px 28px; }
+
+    .item-cat-label {
       font-size: 11px; font-weight: 700;
       text-transform: uppercase; letter-spacing: 1.5px;
-      color: var(--marcolina); margin-bottom: 8px;
+      color: var(--cat-color, var(--marcolina));
+      margin-bottom: 8px;
     }
-    .tree-local {
+    .item-nome {
       font-family: 'Fraunces', serif;
       font-weight: 700; font-size: 28px; line-height: 1.15;
       margin-bottom: 22px; padding-bottom: 22px;
       border-bottom: 1px solid var(--line);
       color: var(--ink);
     }
-    .tree-section { margin-top: 4px; }
-    .tree-label {
+
+    /* Campos dinâmicos no painel */
+    .item-field { margin-top: 18px; }
+    .item-field:first-child { margin-top: 0; }
+    .item-field-label {
       font-size: 11px; font-weight: 700;
       text-transform: uppercase; letter-spacing: 1px;
-      color: var(--marcolina); margin-bottom: 6px;
+      color: var(--cat-color, var(--marcolina));
+      margin-bottom: 6px;
     }
-    .tree-value { font-size: 15px; line-height: 1.5; }
-    .tree-fact-year {
+    .item-field-value {
+      font-size: 15px; line-height: 1.5;
+      white-space: pre-line;  /* preserva quebras \n nos textos */
+    }
+    .item-field-pilula {
       display: inline-block;
       background: var(--marcolina-light);
       color: var(--marcolina-dark);
@@ -184,7 +183,7 @@
       flex: 1;
       border: 1.5px solid var(--line);
       border-radius: 8px;
-      padding: 9px 38px 9px 14px;  /* extra right padding for clear button */
+      padding: 9px 38px 9px 14px;
       font-family: inherit; font-size: 14px;
       outline: none;
       transition: border-color 0.15s;
@@ -194,8 +193,7 @@
 
     .search-clear {
       position: absolute;
-      right: 28px;
-      top: 50%;
+      right: 28px; top: 50%;
       transform: translateY(-50%);
       width: 22px; height: 22px;
       border: none;
@@ -211,20 +209,12 @@
       padding: 0;
       transition: background 0.15s, color 0.15s;
     }
-    .search-clear:hover {
-      background: var(--marcolina);
-      color: white;
-    }
-    .search-clear.visible {
-      display: flex;
-    }
+    .search-clear:hover { background: var(--marcolina); color: white; }
+    .search-clear.visible { display: flex; }
 
-    /* Dropdown de previews */
     .search-results {
       position: absolute;
-      top: 100%;
-      left: 20px;
-      right: 20px;
+      top: 100%; left: 20px; right: 20px;
       background: white;
       border: 1px solid var(--line);
       border-radius: 8px;
@@ -240,53 +230,34 @@
       padding: 10px 14px;
       border-bottom: 1px solid var(--line);
       cursor: pointer;
-      display: flex;
-      gap: 10px;
+      display: flex; gap: 10px;
       align-items: flex-start;
       transition: background 0.1s;
     }
     .search-result-item:last-child { border-bottom: none; }
     .search-result-item:hover,
-    .search-result-item.kbd-active {
-      background: var(--marcolina-light);
-    }
+    .search-result-item.kbd-active { background: var(--marcolina-light); }
 
-    .sr-num {
+    .sr-badge {
       flex-shrink: 0;
-      background: var(--marcolina);
+      background: var(--cat-color, var(--marcolina));
       color: white;
       font-family: 'Inter', sans-serif;
-      font-weight: 800;
-      font-size: 12px;
-      padding: 3px 8px;
-      border-radius: 4px;
-      min-width: 36px;
-      text-align: center;
+      font-weight: 800; font-size: 12px;
+      padding: 3px 8px; border-radius: 4px;
+      min-width: 36px; text-align: center;
       letter-spacing: 0.3px;
     }
     .sr-content { flex: 1; min-width: 0; }
-    .sr-local {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.3;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    .sr-nome {
+      font-size: 14px; font-weight: 600;
+      color: var(--ink); line-height: 1.3;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
     .sr-snippet {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.3;
+      font-size: 12px; color: var(--muted); line-height: 1.3;
       margin-top: 2px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .sr-snippet em {
-      color: var(--marcolina-dark);
-      font-style: normal;
-      font-weight: 600;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
     .sr-content mark {
       background: var(--marcolina-light);
@@ -295,7 +266,6 @@
       padding: 0 2px;
       border-radius: 2px;
     }
-
     .search-empty {
       padding: 18px 16px;
       text-align: center;
@@ -303,62 +273,59 @@
       font-size: 13px;
     }
 
-    /* === PIN ARREDONDADO === */
-    .marcolina-pin {
+    /* === PINS === */
+    .pin {
       width: 36px; height: 48px;
       position: relative;
       filter: drop-shadow(0 3px 4px rgba(0,0,0,0.25));
       cursor: pointer;
       transition: transform 0.15s, filter 0.25s;
     }
-    .marcolina-pin svg { width: 100%; height: 100%; display: block; }
-    .marcolina-pin svg path {
-      transition: fill 0.25s;
-    }
-    .marcolina-pin .num {
+    .pin svg { width: 100%; height: 100%; display: block; }
+    .pin svg path { transition: fill 0.25s; }
+
+    /* Conteúdo central do pin (número ou ícone) */
+    .pin-content {
       position: absolute;
       top: 9px; left: 0; right: 0;
       text-align: center;
       color: white;
+      pointer-events: none;
+      transition: color 0.25s;
+    }
+    .pin-numerado .pin-content {
       font-family: 'Inter', sans-serif;
       font-weight: 800;
       font-size: 14px;
       letter-spacing: 0.3px;
-      pointer-events: none;
-      transition: color 0.25s;
     }
-    .marcolina-pin:hover { transform: translateY(-2px) scale(1.05); }
+    .pin-icone .pin-content {
+      font-size: 16px;
+      line-height: 1;
+    }
 
-    /* Pin ativo (selecionado no painel) */
-    .marcolina-pin.active {
+    .pin:hover { transform: translateY(-2px) scale(1.05); }
+
+    /* Estados do pin */
+    .pin.active {
       transform: translateY(-2px) scale(1.1);
-      filter: drop-shadow(0 4px 6px rgba(212, 74, 24, 0.5));
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
     }
-    .marcolina-pin.active svg path {
-      fill: var(--marcolina-dark);
-    }
+    /* No estado ativo escurece a cor base via filter */
+    .pin.active svg path { filter: brightness(0.85); }
 
-    /* Pin atenuado (não bate com a busca) */
-    .marcolina-pin.dimmed svg path {
-      fill: #b8b8b8;
+    .pin.dimmed svg path {
+      fill: #b8b8b8 !important;
       stroke: #ededed;
     }
-    .marcolina-pin.dimmed .num {
-      color: #ededed;
-    }
-    .marcolina-pin.dimmed {
-      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.15));
-    }
-    /* hover em pin dimmed continua mostrando que é interativo */
-    .marcolina-pin.dimmed:hover svg path {
-      fill: #999;
-    }
+    .pin.dimmed .pin-content { color: #ededed; }
+    .pin.dimmed { filter: drop-shadow(0 2px 2px rgba(0,0,0,0.15)); }
+    .pin.dimmed:hover svg path { fill: #999 !important; }
 
-    /* Mobile */
+    /* === MOBILE === */
     @media (max-width: 768px) {
       .main { flex-direction: column; }
 
-      /* Painel inferior — sem busca embutida, só os detalhes */
       aside {
         width: 100%;
         max-height: 60vh;
@@ -370,33 +337,24 @@
       .stats { gap: 8px; }
       .stat { padding: 4px 10px; font-size: 12px; }
 
-      /* Busca sai do painel lateral e fixa no topo, abaixo do header */
+      /* Busca sticky no topo */
       .search-wrap {
         position: fixed;
-        top: 0;          /* será ajustado via JS para ficar abaixo do header */
-        left: 0;
-        right: 0;
+        top: 0; left: 0; right: 0;
         z-index: 900;
         border-bottom: 1px solid var(--line);
         box-shadow: 0 2px 6px rgba(0,0,0,0.06);
       }
       .search-bar { padding: 10px 14px; }
-
-      /* Dropdown limita altura ao espaço disponível acima do teclado */
       .search-results {
-        left: 14px;
-        right: 14px;
-        /* Calcula altura máxima baseada na viewport visível menos o que está acima */
+        left: 14px; right: 14px;
         max-height: min(360px, calc(var(--avail-h, 60vh) - 60px));
       }
 
-      /* Reordenação no painel: texto antes, foto depois */
-      .tree-card { display: flex; flex-direction: column-reverse; }
-      /* No mobile a borda inferior do "local" some (vira separador entre texto e foto) */
-      .tree-local { border-bottom: none; padding-bottom: 0; margin-bottom: 18px; }
-      /* Foto não precisa do badge no canto superior se ela está embaixo;
-         badge continua aparecendo, mas reposicionamos pra ficar mais discreto */
-      .tree-photo { margin-top: 4px; border-top: 1px solid var(--line); }
+      /* Reordenação: texto antes, foto depois */
+      .item-card { display: flex; flex-direction: column-reverse; }
+      .item-nome { border-bottom: none; padding-bottom: 0; margin-bottom: 18px; }
+      .item-photo { margin-top: 4px; border-top: 1px solid var(--line); }
     }
   </style>
 </head>
@@ -405,10 +363,10 @@
     <div class="brand">
       <span class="brand-name">MARCOLINA</span>
       <span class="brand-divider"></span>
-      <span class="brand-title">Mapa de Árvores · Flores da Cunha</span>
+      <span class="brand-title">Mapa · Flores da Cunha</span>
     </div>
     <div class="stats">
-      <span class="stat"><strong id="stat-count">0</strong> árvores mapeadas</span>
+      <span class="stat"><strong id="stat-count">0</strong> pontos mapeados</span>
     </div>
   </header>
 
@@ -418,54 +376,55 @@
     <aside>
       <div class="search-wrap">
         <div class="search-bar">
-          <input type="text" id="search" placeholder="Buscar por número, local, fato ou ano..." autocomplete="off" />
+          <input type="text" id="search" placeholder="Buscar por nome, número ou texto..." autocomplete="off" />
           <button type="button" class="search-clear" id="search-clear" aria-label="Limpar busca">×</button>
         </div>
         <div class="search-results" id="search-results"></div>
       </div>
       <div id="panel">
         <div class="panel-empty">
-          <div class="icon">🌳</div>
-          <h2>Selecione uma árvore</h2>
-          <p>Clique em qualquer marcador no mapa para ver os detalhes da árvore, o fato histórico e a foto da placa.</p>
+          <div class="icon">📍</div>
+          <h2>Selecione um item</h2>
+          <p>Clique em qualquer marcador no mapa para ver os detalhes.</p>
         </div>
       </div>
     </aside>
   </div>
 
-  <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
           crossorigin=""></script>
 
   <script>
-    // ========== Setup do mapa ==========
+    // ============================================================
+    // CONFIG
+    // ============================================================
+    const MANIFEST_URL = 'mapa.json';
     const FLORES_DA_CUNHA = [-29.029, -51.181];
 
-    const map = L.map('map', {
-      center: FLORES_DA_CUNHA,
-      zoom: 15,
-      zoomControl: true
-    });
+    // ============================================================
+    // STATE
+    // Organizado pra suportar múltiplas categorias (Etapa 3+).
+    // Por ora só há uma categoria carregada.
+    // ============================================================
+    const state = {
+      categorias: [],                    // [{id, nome, icone, cor, estilo_pin, campos, ...}]
+      categoriasPorId: {},               // id -> categoria
+      itensPorCategoria: {},             // catId -> [item, ...]
+      itemPorChave: {},                  // "catId:itemId" -> { categoria, item }
+      markers: {},                       // "catId:itemId" -> L.Marker
+      categoriasVisiveis: new Set(),     // catIds visíveis no momento
+      itemAtivo: null,                   // "catId:itemId" ou null
+      ultimaBusca: { matches: [], query: '' }
+    };
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · MARCOLINA',
-      maxZoom: 19
-    }).addTo(map);
-
-    // Fecha dropdown ao clicar/arrastar no mapa
-    map.on('click dragstart', () => closeDropdown());
-
-    let trees = [];
-    let markers = {};
-    let activeTree = null;
-
-    // ========== Helpers ==========
-    function fotoPath(numero) {
-      return `img/${numero}.jpeg`;
+    // ============================================================
+    // UTILS
+    // ============================================================
+    function chaveItem(catId, itemId) {
+      return `${catId}:${itemId}`;
     }
 
-    // Remove acentos e normaliza pra busca
     function norm(s) {
       return String(s ?? '')
         .normalize('NFD')
@@ -473,7 +432,6 @@
         .toLowerCase();
     }
 
-    // Escapa HTML pra inserir com segurança
     function esc(s) {
       return String(s ?? '')
         .replace(/&/g, '&amp;')
@@ -481,8 +439,14 @@
         .replace(/>/g, '&gt;');
     }
 
-    // Marca o termo no texto (case+acento insensitive)
-    // Retorna HTML com <mark> nos trechos que batem
+    // Substitui {id}, {nome} etc. num template de path
+    function expandirTemplate(tmpl, item) {
+      return String(tmpl).replace(/\{(\w+)\}/g, (_, key) =>
+        item[key] != null ? String(item[key]) : ''
+      );
+    }
+
+    // Marca termo no texto (case+acento insensitive). Retorna HTML com <mark>.
     function highlight(text, query) {
       if (!query) return esc(text);
       const original = String(text ?? '');
@@ -505,88 +469,188 @@
       return result;
     }
 
-    // ========== Pin icon ==========
-    function makeIcon(numero) {
+    function fotoUrl(categoria, item) {
+      // Item pode ter "foto" próprio; senão usa o padrão da categoria
+      if (item.foto) return item.foto;
+      if (categoria.foto_padrao) return expandirTemplate(categoria.foto_padrao, item);
+      return null;
+    }
+
+    // ============================================================
+    // DATA — carregamento do manifest e categorias
+    // ============================================================
+    async function carregarManifest() {
+      const r = await fetch(MANIFEST_URL);
+      if (!r.ok) throw new Error('Falha ao carregar ' + MANIFEST_URL);
+      return r.json();
+    }
+
+    async function carregarCategoria(cat) {
+      const r = await fetch(cat.arquivo);
+      if (!r.ok) throw new Error('Falha ao carregar ' + cat.arquivo);
+      const itens = await r.json();
+      // Valida unicidade do id dentro da categoria
+      const vistos = new Set();
+      for (const item of itens) {
+        if (item.id == null) {
+          console.warn(`Item sem id na categoria ${cat.id}`, item);
+          continue;
+        }
+        if (vistos.has(item.id)) {
+          console.warn(`ID duplicado "${item.id}" na categoria ${cat.id}`);
+        }
+        vistos.add(item.id);
+      }
+      return itens;
+    }
+
+    async function carregarTudo() {
+      const manifest = await carregarManifest();
+      if (manifest.titulo) {
+        // Atualiza título da aba dinamicamente caso queira sobrescrever
+        // (atualmente o <title> já está estático, mas isso permite override)
+      }
+
+      state.categorias = manifest.categorias;
+      state.categoriasPorId = {};
+      for (const cat of state.categorias) {
+        state.categoriasPorId[cat.id] = cat;
+        state.categoriasVisiveis.add(cat.id);
+      }
+
+      // Carrega todos os arquivos em paralelo
+      const resultados = await Promise.all(
+        state.categorias.map(cat =>
+          carregarCategoria(cat).then(itens => ({ cat, itens }))
+        )
+      );
+
+      for (const { cat, itens } of resultados) {
+        state.itensPorCategoria[cat.id] = itens;
+        for (const item of itens) {
+          state.itemPorChave[chaveItem(cat.id, item.id)] = { categoria: cat, item };
+        }
+      }
+    }
+
+    // ============================================================
+    // ICONS — factory de pins por estilo
+    // ============================================================
+    function criarIcone(categoria, item) {
+      const cor = categoria.cor;
+      const corDark = escurecer(cor, 0.2);
+      const estilo = categoria.estilo_pin || 'numerado';
+
+      let conteudo = '';
+      if (estilo === 'numerado') {
+        conteudo = `<span class="pin-content">${esc(item.id)}</span>`;
+      } else if (estilo === 'icone') {
+        conteudo = `<span class="pin-content">${categoria.icone || '📍'}</span>`;
+      }
+      // 'ponto' não tem conteúdo central
+
+      const html = `
+        <div class="pin pin-${estilo}" data-cat="${esc(categoria.id)}" data-id="${esc(item.id)}" style="--cat-color: ${cor}; --cat-color-dark: ${corDark}">
+          <svg viewBox="0 0 36 48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 0C8.1 0 0 8.1 0 18c0 4.5 1.7 8.6 4.4 11.7L18 48l13.6-18.3C34.3 26.6 36 22.5 36 18 36 8.1 27.9 0 18 0z"
+                  fill="${cor}" stroke="white" stroke-width="2.5"/>
+          </svg>
+          ${conteudo}
+        </div>
+      `;
+
       return L.divIcon({
         className: '',
-        html: `
-          <div class="marcolina-pin" data-num="${numero}">
-            <svg viewBox="0 0 36 48" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 0C8.1 0 0 8.1 0 18c0 4.5 1.7 8.6 4.4 11.7L18 48l13.6-18.3C34.3 26.6 36 22.5 36 18 36 8.1 27.9 0 18 0z" fill="#fd632d" stroke="white" stroke-width="2.5"/>
-            </svg>
-            <span class="num">${numero}</span>
-          </div>
-        `,
+        html,
         iconSize: [36, 48],
         iconAnchor: [18, 48]
       });
     }
 
-    // ========== Painel lateral ==========
-    function renderEmpty() {
-      document.getElementById('panel').innerHTML = `
-        <div class="panel-empty">
-          <div class="icon">🌳</div>
-          <h2>Selecione uma árvore</h2>
-          <p>Clique em qualquer marcador no mapa para ver os detalhes da árvore, o fato histórico e a foto da placa.</p>
-        </div>
-      `;
+    // Escurece uma cor hex em ~20% (usado pro estado active do pin)
+    function escurecer(hex, frac) {
+      const m = /^#?([a-f0-9]{6})$/i.exec(hex);
+      if (!m) return hex;
+      const n = parseInt(m[1], 16);
+      const r = Math.max(0, Math.round(((n >> 16) & 0xff) * (1 - frac)));
+      const g = Math.max(0, Math.round(((n >> 8) & 0xff) * (1 - frac)));
+      const b = Math.max(0, Math.round((n & 0xff) * (1 - frac)));
+      return '#' + [r,g,b].map(v => v.toString(16).padStart(2,'0')).join('');
     }
 
-    function renderTree(tree) {
-      const panel = document.getElementById('panel');
-      const foto = fotoPath(tree.numero);
+    // ============================================================
+    // MAP
+    // ============================================================
+    let map;
 
-      const imgHtml = `
-        <img src="${foto}" alt="Placa da árvore ${tree.numero}"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="placeholder" style="display:none; flex-direction:column; align-items:center; justify-content:center; width:100%; height:100%;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2" />
-            <circle cx="8.5" cy="8.5" r="1.5" />
-            <path d="M21 15l-5-5L5 21" />
-          </svg>
-          <span>Foto em ${foto}</span>
-        </div>
-      `;
+    function initMapa() {
+      map = L.map('map', {
+        center: FLORES_DA_CUNHA,
+        zoom: 15,
+        zoomControl: true
+      });
 
-      panel.innerHTML = `
-        <div class="tree-card">
-          <div class="tree-photo">
-            <div class="tree-number-badge">N° ${tree.numero}</div>
-            ${imgHtml}
-          </div>
-          <div class="tree-body">
-            <div class="tree-local-label">Local</div>
-            <h2 class="tree-local">${esc(tree.local)}</h2>
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · MARCOLINA',
+        maxZoom: 19
+      }).addTo(map);
 
-            <div class="tree-section">
-              <div class="tree-label">Fato Histórico</div>
-              <div class="tree-fact-year">Fato de ${tree.ano_fato}</div>
-              <div class="tree-value">${esc(tree.fato)}</div>
-            </div>
-          </div>
-        </div>
-      `;
+      map.on('click dragstart', () => closeDropdown());
     }
 
-    // ========== Marker state ==========
-    function setActiveMarker(numero) {
-      document.querySelectorAll('.marcolina-pin').forEach(el => el.classList.remove('active'));
-      if (numero != null) {
-        const el = document.querySelector(`.marcolina-pin[data-num="${numero}"]`);
+    function adicionarMarcadores() {
+      const bounds = [];
+      for (const cat of state.categorias) {
+        const itens = state.itensPorCategoria[cat.id] || [];
+        for (const item of itens) {
+          const m = L.marker([item.latitude, item.longitude], {
+            icon: criarIcone(cat, item)
+          }).addTo(map);
+          const chave = chaveItem(cat.id, item.id);
+          state.markers[chave] = m;
+          m.on('click', () => onMarkerClick(cat, item));
+          bounds.push([item.latitude, item.longitude]);
+        }
+      }
+
+      if (bounds.length > 1) {
+        map.fitBounds(bounds, { padding: [60, 60] });
+      } else if (bounds.length === 1) {
+        map.setView(bounds[0], 17);
+      }
+    }
+
+    function onMarkerClick(categoria, item) {
+      const chave = chaveItem(categoria.id, item.id);
+      if (state.itemAtivo === chave) {
+        // Toggle: clicou no mesmo, fecha
+        state.itemAtivo = null;
+        atualizarPinAtivo(null);
+        renderEmpty();
+      } else {
+        state.itemAtivo = chave;
+        atualizarPinAtivo(chave);
+        renderItem(categoria, item);
+      }
+    }
+
+    function atualizarPinAtivo(chave) {
+      document.querySelectorAll('.pin').forEach(el => el.classList.remove('active'));
+      if (chave) {
+        const [catId, itemId] = chave.split(':');
+        const el = document.querySelector(`.pin[data-cat="${CSS.escape(catId)}"][data-id="${CSS.escape(itemId)}"]`);
         if (el) el.classList.add('active');
       }
     }
 
-    // Aplica/remove dim nos pins. matchSet = Set de números que batem com a busca.
-    // Se matchSet for null, remove o dim de todos.
-    function applyDim(matchSet) {
-      document.querySelectorAll('.marcolina-pin').forEach(el => {
-        const num = Number(el.dataset.num);
+    // Aplica/remove dim. matchSet = Set de chaves "catId:itemId" que ficam destacadas.
+    // null = remove dim de todos.
+    function atualizarDim(matchSet) {
+      document.querySelectorAll('.pin').forEach(el => {
+        const k = chaveItem(el.dataset.cat, el.dataset.id);
         if (matchSet === null) {
           el.classList.remove('dimmed');
-        } else if (matchSet.has(num)) {
+        } else if (matchSet.has(k)) {
           el.classList.remove('dimmed');
         } else {
           el.classList.add('dimmed');
@@ -594,65 +658,164 @@
       });
     }
 
-    function handleMarkerClick(tree) {
-      if (activeTree === tree.numero) {
-        activeTree = null;
-        setActiveMarker(null);
-        renderEmpty();
-      } else {
-        activeTree = tree.numero;
-        renderTree(tree);
-        setActiveMarker(tree.numero);
+    // Atualiza o contador no header
+    function atualizarContadorTotal() {
+      let total = 0;
+      for (const cat of state.categorias) {
+        if (state.categoriasVisiveis.has(cat.id)) {
+          total += (state.itensPorCategoria[cat.id] || []).length;
+        }
       }
+      document.getElementById('stat-count').textContent = total;
     }
 
-    // ========== Busca ==========
+    // ============================================================
+    // PANEL — renderização dirigida pela configuração da categoria
+    // ============================================================
+    function renderEmpty() {
+      document.getElementById('panel').innerHTML = `
+        <div class="panel-empty">
+          <div class="icon">📍</div>
+          <h2>Selecione um item</h2>
+          <p>Clique em qualquer marcador no mapa para ver os detalhes.</p>
+        </div>
+      `;
+    }
+
+    function renderItem(categoria, item) {
+      const panel = document.getElementById('panel');
+      const cor = categoria.cor;
+
+      // Foto (opcional). Se path existir, tenta carregar; onerror esconde tudo.
+      let fotoHtml = '';
+      const fUrl = fotoUrl(categoria, item);
+      if (fUrl) {
+        fotoHtml = `
+          <div class="item-photo" data-photo-wrap>
+            <div class="item-badge">${esc(formatarIdParaBadge(categoria, item))}</div>
+            <img src="${esc(fUrl)}" alt="${esc(item.nome)}"
+                 onerror="this.parentElement.style.display='none';" />
+          </div>
+        `;
+      }
+
+      // Renderiza cada campo configurado na categoria
+      const camposHtml = (categoria.campos || []).map(campo => {
+        const valor = item[campo.key];
+        if (valor == null || valor === '') return '';
+        return renderCampo(campo, valor);
+      }).join('');
+
+      panel.innerHTML = `
+        <div class="item-card" style="--cat-color: ${cor}">
+          ${fotoHtml}
+          <div class="item-body">
+            <div class="item-cat-label">${esc(categoria.nome)}</div>
+            <h2 class="item-nome">${esc(item.nome)}</h2>
+            ${camposHtml}
+          </div>
+        </div>
+      `;
+    }
+
+    // Formata o ID pra mostrar no badge da foto.
+    // Numerado: "N° 47". Outros estilos: só o id ou o ícone da categoria.
+    function formatarIdParaBadge(categoria, item) {
+      if (categoria.estilo_pin === 'numerado') {
+        return 'N° ' + item.id;
+      }
+      return categoria.icone || '';
+    }
+
+    // Renderiza um campo conforme seu tipo
+    function renderCampo(campo, valor) {
+      const label = esc(campo.label || '');
+      if (campo.tipo === 'ano_pilula') {
+        const prefixo = campo.prefixo || '';
+        return `
+          <div class="item-field">
+            <div class="item-field-label">${label}</div>
+            <div class="item-field-pilula">${esc(prefixo)}${esc(valor)}</div>
+          </div>
+        `;
+      }
+      // tipo padrão: texto
+      return `
+        <div class="item-field">
+          <div class="item-field-label">${label}</div>
+          <div class="item-field-value">${esc(valor)}</div>
+        </div>
+      `;
+    }
+
+    // ============================================================
+    // SEARCH — generalizada por categoria
+    // ============================================================
     const searchInput = document.getElementById('search');
     const searchClear = document.getElementById('search-clear');
     const searchResults = document.getElementById('search-results');
     let kbdIndex = -1;
-    let currentMatches = [];
 
     function isNumericQuery(q) {
       return /^\d+$/.test(q.trim());
     }
 
-    // Calcula matches. Retorna { matches, fieldHits } onde fieldHits[numero] = ['local','fato',...]
-    function searchTrees(rawQuery) {
-      const q = rawQuery.trim();
-      if (!q) return { matches: [], fieldHits: {} };
-
-      const numeric = isNumericQuery(q);
-
-      // Trigger: numérico = qualquer comprimento; texto = mín 3 caracteres
-      if (!numeric && q.length < 3) return { matches: [], fieldHits: {} };
-
-      const nq = norm(q);
-      const matches = [];
-      const fieldHits = {};
-
-      trees.forEach(t => {
-        const hits = [];
-
-        if (numeric) {
-          // pra numero, match parcial no início OU "contém" (47, 4, 14, 147 etc)
-          if (String(t.numero).includes(q)) hits.push('numero');
-          if (String(t.ano_fato).includes(q)) hits.push('ano');
-        } else {
-          if (norm(t.local).includes(nq)) hits.push('local');
-          if (norm(t.fato).includes(nq)) hits.push('fato');
-        }
-
-        if (hits.length > 0) {
-          matches.push(t);
-          fieldHits[t.numero] = hits;
-        }
-      });
-
-      return { matches, fieldHits };
+    // Coleta os campos buscáveis de uma categoria (textos + anos)
+    function camposBuscaveis(categoria) {
+      const tiposBuscaveis = new Set(['texto', 'ano_pilula', 'ano']);
+      return (categoria.campos || []).filter(c => tiposBuscaveis.has(c.tipo));
     }
 
-    function renderDropdown(rawQuery, matches, fieldHits) {
+    function buscar(rawQuery) {
+      const q = rawQuery.trim();
+      if (!q) return [];
+      const numeric = isNumericQuery(q);
+      // Trigger: numérico = qualquer comprimento; texto = mín 3
+      if (!numeric && q.length < 3) return [];
+
+      const nq = norm(q);
+      const results = [];
+
+      for (const cat of state.categorias) {
+        if (!state.categoriasVisiveis.has(cat.id)) continue;  // (b): respeita filtro
+
+        const itens = state.itensPorCategoria[cat.id] || [];
+        const campos = camposBuscaveis(cat);
+
+        for (const item of itens) {
+          const hits = [];
+
+          // Match por ID (numérico)
+          if (numeric && typeof item.id === 'number' && String(item.id).includes(q)) {
+            hits.push({ tipo: 'id', key: 'id', valor: item.id });
+          }
+
+          // Match no nome (sempre busca)
+          if (norm(item.nome).includes(nq)) {
+            hits.push({ tipo: 'nome', key: 'nome', valor: item.nome });
+          }
+
+          // Match nos campos configurados
+          for (const c of campos) {
+            const v = item[c.key];
+            if (v == null) continue;
+            const sv = String(v);
+            const bate = numeric ? sv.includes(q) : norm(sv).includes(nq);
+            if (bate) {
+              hits.push({ tipo: c.tipo, key: c.key, valor: v, label: c.label });
+            }
+          }
+
+          if (hits.length > 0) {
+            results.push({ categoria: cat, item, hits });
+          }
+        }
+      }
+
+      return results;
+    }
+
+    function renderDropdown(rawQuery, results) {
       const q = rawQuery.trim();
       const numeric = isNumericQuery(q);
       const tooShort = !numeric && q.length < 3 && q.length > 0;
@@ -666,42 +829,53 @@
         closeDropdown();
         return;
       }
-      if (matches.length === 0) {
+      if (results.length === 0) {
         searchResults.innerHTML = `<div class="search-empty">Nenhum resultado para "${esc(q)}"</div>`;
         searchResults.classList.add('open');
         return;
       }
 
-      const limited = matches.slice(0, 8);
-      searchResults.innerHTML = limited.map((t, i) => {
-        const hits = fieldHits[t.numero] || [];
-        // Snippet: se match foi no fato, mostra trecho do fato; senão mostra o ano
+      const limited = results.slice(0, 8);
+      searchResults.innerHTML = limited.map((res, i) => {
+        const { categoria, item, hits } = res;
+
+        // Decide o snippet: primeiro hit que não seja 'nome' nem 'id'
         let snippet = '';
-        if (hits.includes('fato')) {
-          snippet = highlight(t.fato, q);
-        } else if (hits.includes('ano')) {
-          snippet = `Fato de <em>${highlight(String(t.ano_fato), q)}</em>`;
+        const hitTexto = hits.find(h => h.tipo === 'texto');
+        const hitAno = hits.find(h => h.tipo === 'ano_pilula' || h.tipo === 'ano');
+        if (hitTexto) {
+          snippet = highlight(hitTexto.valor, q);
+        } else if (hitAno) {
+          snippet = `${esc(hitAno.label || 'Ano')}: ${highlight(String(hitAno.valor), q)}`;
         } else {
-          snippet = `Fato de ${t.ano_fato}`;
+          // Sem hit de campo: mostra um resumo curto se houver
+          const primeiro = (categoria.campos || []).find(c => item[c.key] != null);
+          if (primeiro) {
+            const v = item[primeiro.key];
+            snippet = esc(String(v).slice(0, 80));
+          }
         }
 
-        const localHtml = hits.includes('local') ? highlight(t.local, q) : esc(t.local);
-        const numHtml = hits.includes('numero') ? highlight(String(t.numero), q) : esc(String(t.numero));
+        const nomeHtml = hits.some(h => h.tipo === 'nome') ? highlight(item.nome, q) : esc(item.nome);
+
+        // Badge: número (se numerado) ou ícone da categoria
+        const badgeContent = categoria.estilo_pin === 'numerado'
+          ? (hits.some(h => h.tipo === 'id') ? highlight(String(item.id), q) : esc(String(item.id)))
+          : esc(categoria.icone || '');
 
         return `
-          <div class="search-result-item" data-num="${t.numero}" data-idx="${i}">
-            <div class="sr-num">${numHtml}</div>
+          <div class="search-result-item" data-cat="${esc(categoria.id)}" data-id="${esc(item.id)}" data-idx="${i}" style="--cat-color: ${categoria.cor}">
+            <div class="sr-badge">${badgeContent}</div>
             <div class="sr-content">
-              <div class="sr-local">${localHtml}</div>
+              <div class="sr-nome">${nomeHtml}</div>
               <div class="sr-snippet">${snippet}</div>
             </div>
           </div>
         `;
       }).join('');
 
-      // Hint de "+N resultados" se passou de 8
-      if (matches.length > 8) {
-        searchResults.innerHTML += `<div class="search-empty" style="border-top:1px solid var(--line);">+${matches.length - 8} outros resultados destacados no mapa</div>`;
+      if (results.length > 8) {
+        searchResults.innerHTML += `<div class="search-empty" style="border-top:1px solid var(--line);">+${results.length - 8} outros resultados destacados no mapa</div>`;
       }
 
       searchResults.classList.add('open');
@@ -713,14 +887,14 @@
       kbdIndex = -1;
     }
 
-    function selectResult(numero) {
-      const tree = trees.find(t => t.numero === Number(numero));
-      if (!tree) return;
-      // Centraliza no pin mantendo zoom atual
-      map.panTo([tree.latitude, tree.longitude], { animate: true });
-      activeTree = tree.numero;
-      renderTree(tree);
-      setActiveMarker(tree.numero);
+    function selecionarResultado(catId, itemId) {
+      const entry = state.itemPorChave[chaveItem(catId, itemId)];
+      if (!entry) return;
+      const { categoria, item } = entry;
+      map.panTo([item.latitude, item.longitude], { animate: true });
+      state.itemAtivo = chaveItem(catId, itemId);
+      renderItem(categoria, item);
+      atualizarPinAtivo(state.itemAtivo);
       closeDropdown();
     }
 
@@ -728,41 +902,42 @@
       searchInput.value = '';
       searchClear.classList.remove('visible');
       closeDropdown();
-      applyDim(null);
-      currentMatches = [];
+      atualizarDim(null);
+      state.ultimaBusca = { matches: [], query: '' };
     }
 
-    // Input handler
+    function aplicarBuscaNoMapa(rawQuery, results) {
+      const q = rawQuery.trim();
+      const numeric = isNumericQuery(q);
+      const triggers = q && (numeric || q.length >= 3);
+
+      if (!triggers) {
+        atualizarDim(null);
+        return;
+      }
+      if (results.length === 0) {
+        atualizarDim(new Set());
+        return;
+      }
+      const chaves = new Set(results.map(r => chaveItem(r.categoria.id, r.item.id)));
+      atualizarDim(chaves);
+    }
+
+    // Listeners da busca
     searchInput.addEventListener('input', () => {
       const q = searchInput.value;
       searchClear.classList.toggle('visible', q.length > 0);
-
-      const { matches, fieldHits } = searchTrees(q);
-      currentMatches = matches;
-
-      // Highlight no mapa: dim os que não batem
-      const numeric = isNumericQuery(q.trim());
-      const triggers = q.trim() && (numeric || q.trim().length >= 3);
-
-      if (triggers && matches.length > 0) {
-        applyDim(new Set(matches.map(t => t.numero)));
-      } else if (triggers && matches.length === 0) {
-        // Busca ativa mas sem resultado: tudo dim pra deixar claro que nada bate
-        applyDim(new Set());
-      } else {
-        applyDim(null);
-      }
-
-      renderDropdown(q, matches, fieldHits);
+      const results = buscar(q);
+      state.ultimaBusca = { matches: results, query: q };
+      aplicarBuscaNoMapa(q, results);
+      renderDropdown(q, results);
     });
 
-    // Botão limpar
     searchClear.addEventListener('click', () => {
       clearSearch();
       searchInput.focus();
     });
 
-    // Teclado: setas, enter, esc
     searchInput.addEventListener('keydown', (e) => {
       const items = searchResults.querySelectorAll('.search-result-item');
 
@@ -790,69 +965,29 @@
       if (e.key === 'Enter' && items.length > 0) {
         e.preventDefault();
         const target = kbdIndex >= 0 ? items[kbdIndex] : items[0];
-        selectResult(target.dataset.num);
+        selecionarResultado(target.dataset.cat, target.dataset.id);
       }
     });
 
-    // Click nos itens (delegação)
     searchResults.addEventListener('click', (e) => {
       const item = e.target.closest('.search-result-item');
-      if (item) selectResult(item.dataset.num);
+      if (item) selecionarResultado(item.dataset.cat, item.dataset.id);
     });
 
-    // Fecha dropdown ao clicar fora
     document.addEventListener('click', (e) => {
       if (!e.target.closest('.search-wrap')) closeDropdown();
     });
 
-    // Reabre dropdown ao focar no input se já tem texto
     searchInput.addEventListener('focus', () => {
       if (searchInput.value.trim()) {
-        const { matches, fieldHits } = searchTrees(searchInput.value);
-        renderDropdown(searchInput.value, matches, fieldHits);
+        const results = buscar(searchInput.value);
+        renderDropdown(searchInput.value, results);
       }
     });
 
-    // ========== Carregamento dos dados ==========
-    fetch('arvores.json')
-      .then(r => {
-        if (!r.ok) throw new Error('Falha ao carregar arvores.json');
-        return r.json();
-      })
-      .then(data => {
-        trees = data;
-        document.getElementById('stat-count').textContent = trees.length;
-
-        const bounds = [];
-        trees.forEach(tree => {
-          const marker = L.marker([tree.latitude, tree.longitude], {
-            icon: makeIcon(tree.numero)
-          }).addTo(map);
-
-          marker.on('click', () => handleMarkerClick(tree));
-          markers[tree.numero] = marker;
-          bounds.push([tree.latitude, tree.longitude]);
-        });
-
-        if (bounds.length > 1) {
-          map.fitBounds(bounds, { padding: [60, 60] });
-        } else if (bounds.length === 1) {
-          map.setView(bounds[0], 17);
-        }
-      })
-      .catch(err => {
-        document.getElementById('panel').innerHTML = `
-          <div class="panel-empty">
-            <div class="icon">⚠️</div>
-            <h2>Erro ao carregar dados</h2>
-            <p>${esc(err.message)}<br><br>Verifique se o arquivo <strong>arvores.json</strong> está na mesma pasta que o index.html.</p>
-          </div>
-        `;
-      });
-
-    // ========== Ajustes de layout no mobile ==========
-    // - Posiciona a barra de busca logo abaixo do header (cuja altura pode variar)
-    // - Atualiza altura disponível pro dropdown quando o teclado virtual abre/fecha
+    // ============================================================
+    // LAYOUT — ajustes mobile
+    // ============================================================
     const headerEl = document.querySelector('header');
     const searchWrapEl = document.querySelector('.search-wrap');
 
@@ -866,35 +1001,49 @@
         document.documentElement.style.setProperty('--avail-h', '');
         return;
       }
-      // Posiciona barra de busca abaixo do header
       const headerH = headerEl.getBoundingClientRect().height;
       searchWrapEl.style.top = headerH + 'px';
 
-      // Espaço vertical útil = viewport visível - header - barra de busca
       const viewportH = window.visualViewport
         ? window.visualViewport.height
         : window.innerHeight;
       const searchH = searchWrapEl.getBoundingClientRect().height;
-      const avail = Math.max(120, viewportH - headerH - searchH - 12); // 12px de respiro
+      const avail = Math.max(120, viewportH - headerH - searchH - 12);
       document.documentElement.style.setProperty('--avail-h', avail + 'px');
     }
 
-    // Eventos relevantes
     window.addEventListener('resize', updateMobileLayout);
     window.addEventListener('orientationchange', updateMobileLayout);
     if (window.visualViewport) {
       window.visualViewport.addEventListener('resize', updateMobileLayout);
       window.visualViewport.addEventListener('scroll', updateMobileLayout);
     }
-    // Atualiza ao focar/desfocar input (cobre quando teclado abre)
     searchInput.addEventListener('focus', updateMobileLayout);
     searchInput.addEventListener('blur', () => {
-      // pequeno delay pra esperar teclado fechar antes de recalcular
       setTimeout(updateMobileLayout, 150);
     });
 
-    // Inicialização
-    updateMobileLayout();
+    // ============================================================
+    // INIT
+    // ============================================================
+    (async function init() {
+      try {
+        initMapa();
+        await carregarTudo();
+        adicionarMarcadores();
+        atualizarContadorTotal();
+        updateMobileLayout();
+      } catch (err) {
+        console.error(err);
+        document.getElementById('panel').innerHTML = `
+          <div class="panel-empty">
+            <div class="icon">⚠️</div>
+            <h2>Erro ao carregar dados</h2>
+            <p>${esc(err.message)}<br><br>Verifique se os arquivos <strong>mapa.json</strong> e <strong>dados/*.json</strong> estão no lugar correto.</p>
+          </div>
+        `;
+      }
+    })();
   </script>
 </body>
 </html>

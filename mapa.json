@@ -1,0 +1,18 @@
+{
+  "titulo": "Mapa · Equipe MARCOLINA",
+  "categorias": [
+    {
+      "id": "arvores",
+      "nome": "Árvores",
+      "icone": "🌳",
+      "cor": "#fd632d",
+      "estilo_pin": "numerado",
+      "arquivo": "dados/arvores.json",
+      "foto_padrao": "img/arvores/{id}.jpeg",
+      "campos": [
+        { "key": "ano_fato", "label": "Ano do Fato", "tipo": "ano_pilula", "prefixo": "Fato de " },
+        { "key": "fato", "label": "Fato Histórico", "tipo": "texto" }
+      ]
+    }
+  ]
+}

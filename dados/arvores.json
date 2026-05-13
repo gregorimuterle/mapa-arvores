@@ -1,0 +1,738 @@
+[
+  {
+    "id": 1,
+    "nome": "Praça Nova Trento",
+    "latitude": -29.028111,
+    "longitude": -51.186103,
+    "ano_fato": 1925,
+    "fato": "Nova Trento completa um ano da emancipação política da cidade de Caxias do Sul, ato ocorrido em 17 de maio de 1924."
+  },
+  {
+    "id": 2,
+    "nome": "Praça da Vindima",
+    "latitude": -29.024404,
+    "longitude": -51.176731,
+    "ano_fato": 1926,
+    "fato": "Na então Nova Trento, a rede elétrica pública foi instalada. Cada quadra recebeu três lâmpadas de 100 watts, e a energia era proveniente de uma usina termoelétrica."
+  },
+  {
+    "id": 3,
+    "nome": "São Gotardo - Área Verde Esquina",
+    "latitude": -29.086068,
+    "longitude": -51.190941,
+    "ano_fato": 1927,
+    "fato": "- No mês de maio deste ano, foi fundada a Viação Aérea Rio-Grandense (VARIG).\n- Em agosto, um incêndio destruiu o Edifício da Intendência Municipal, danificando todos os documentos alocados no prédio."
+  },
+  {
+    "id": 4,
+    "nome": "Centro (Ortobom Diagonal)",
+    "latitude": -29.029354,
+    "longitude": -51.18254,
+    "ano_fato": 1928,
+    "fato": "- Ocorreu a inauguração da nova sede da Independência Municipal.\n- No mesmo ano, foi fundada a Polícia Rodoviária Federal, denominada na época de \"Polícia das Estradas\"."
+  },
+  {
+    "id": 5,
+    "nome": "Bairro Aparecida - Avenida 25 de Julho 3375",
+    "latitude": -29.044728,
+    "longitude": -51.181021,
+    "ano_fato": 1929,
+    "fato": "Apenas três casas comerciais conseguiram superar a crise econômica, conhecida como Crise de 1929 ou Grande Depressão, enquanto inúmeras outras encerraram suas atividades devido à falência."
+  },
+  {
+    "id": 6,
+    "nome": "Capela São Valentin",
+    "latitude": -29.072614,
+    "longitude": -51.123998,
+    "ano_fato": 1930,
+    "fato": "Iniciou-se o processo de construção da Praça da Bandeira."
+  },
+  {
+    "id": 7,
+    "nome": "Capela São Caetano",
+    "latitude": -29.059176,
+    "longitude": -51.131512,
+    "ano_fato": 1931,
+    "fato": "- No cenário nacional, o presidente Getúlio Vargas assinou o decreto que estabeleceu o horário de verão em todo o território nacional.\n- Em janeiro, foi fundada a Cooperativa Nova Aliança."
+  },
+  {
+    "id": 8,
+    "nome": "Lado do Fórum",
+    "latitude": -29.035472,
+    "longitude": -51.18246,
+    "ano_fato": 1932,
+    "fato": "- O Coronel Arthur Gomes Mariante assumiu o poder municipal.\n- Em fevereiro, foi publicado o primeiro Código Eleitoral Brasileiro, que garantiu às mulheres o direito ao voto."
+  },
+  {
+    "id": 9,
+    "nome": "Capela Santa Bárbara",
+    "latitude": -29.049221,
+    "longitude": -51.14293,
+    "ano_fato": 1933,
+    "fato": "Foi instalado o Laboratório Bromatológico da Secretaria de Agricultura do Estado em Flores da Cunha."
+  },
+  {
+    "id": 10,
+    "nome": "Escola Benjamin",
+    "latitude": -28.985934,
+    "longitude": -51.182941,
+    "ano_fato": 1934,
+    "fato": "O episódio marcante do \"Mágico\", prometendo cortar a cabeça de um galo durante um espetáculo e fazê-lo cantar novamente, ocorreu no mesmo ano da fundação da Escola Municipal de Ensino Fundamental Benjamin Constant."
+  },
+  {
+    "id": 11,
+    "nome": "São Gotardo - Área Verde",
+    "latitude": -29.085481,
+    "longitude": -51.190487,
+    "ano_fato": 1935,
+    "fato": "Em 21 de dezembro, o então prefeito Heitor Curra assinou o Decreto Municipal n° 12, que alterou o nome de Nova Trento para Flores da Cunha, em homenagem ao General Flores da Cunha."
+  },
+  {
+    "id": 12,
+    "nome": "Escola Francisco Zilli",
+    "latitude": -29.062191,
+    "longitude": -51.262422,
+    "ano_fato": 1936,
+    "fato": "- Fundação da Associação Rural, primeira instituição político-classista de defesa dos vitivinicultores.\n- Ocorre o ato de criação da Escola Municipal de Ensino Fundamental Francisco Zilli."
+  },
+  {
+    "id": 13,
+    "nome": "Praça de Otávio Rocha",
+    "latitude": -29.060202,
+    "longitude": -51.261434,
+    "ano_fato": 1937,
+    "fato": "Em outubro, foi publicada pelo Governo Federal a primeira Lei Brasileira do Vinho, uma unificação das leis estaduais."
+  },
+  {
+    "id": 14,
+    "nome": "Bairro Granja União - Rua Ivo Maioli 1044",
+    "latitude": -29.02166,
+    "longitude": -51.1895,
+    "ano_fato": 1938,
+    "fato": "Em 1938, o programa de rádio conhecido como A Hora do Brasil passou a ser denominado A Voz do Brasil."
+  },
+  {
+    "id": 15,
+    "nome": "Parque São Pedro",
+    "latitude": -29.055113,
+    "longitude": -51.190107,
+    "ano_fato": 1939,
+    "fato": "Neste ano, o Delegado Florestal, Henrique Luís Roessler, realizou uma visita surpresa ao município de Flores da Cunha, apreendendo armas de caça. Seu nome batiza a Fundação Estadual de Proteção Ambiental (FEPAM)."
+  },
+  {
+    "id": 16,
+    "nome": "Bairro União - Mercado",
+    "latitude": -29.033693,
+    "longitude": -51.192312,
+    "ano_fato": 1940,
+    "fato": "- No mês de junho, iniciou-se o trabalho preparatório para o recenseamento do município.\n- Em maio, o salário mínimo foi instituído no país pelo então presidente Getúlio Vargas."
+  },
+  {
+    "id": 17,
+    "nome": "Bairro Videiras - Rua dos Motoristas",
+    "latitude": -29.040065,
+    "longitude": -51.193299,
+    "ano_fato": 1941,
+    "fato": "Em maio, o Dr. Otto Bélgico Trindade tornou-se o sexto prefeito a assumir o cargo em Flores da Cunha."
+  },
+  {
+    "id": 18,
+    "nome": "Praça Alfredo",
+    "latitude": -29.007861,
+    "longitude": -51.262276,
+    "ano_fato": 1942,
+    "fato": "Em junho, por dois dias, a população de Flores da Cunha vivenciou uma nevasca que cobriu o município e a região de branco."
+  },
+  {
+    "id": 19,
+    "nome": "Rua Borges 2381",
+    "latitude": -29.037805,
+    "longitude": -51.182279,
+    "ano_fato": 1943,
+    "fato": "- Inauguração da Cooperativa Agrícola e Vitivinícola São Victor.\n- Na área da saúde, iniciou-se a produção em larga escala da penicilina (descoberta em 1928), revolucionando o tratamento de infecções bacterianas e salvando milhões de vidas."
+  },
+  {
+    "id": 20,
+    "nome": "Ginásio Poliesportivo",
+    "latitude": -29.034151,
+    "longitude": -51.18552,
+    "ano_fato": 1944,
+    "fato": "- Criação da Sociedade Recreativa e Cultural Florense, importante na promoção da cultura, arte e lazer.\n- Flores da Cunha completa 20 anos de emancipação."
+  },
+  {
+    "id": 21,
+    "nome": "Capela Monte Bérico",
+    "latitude": -29.004663,
+    "longitude": -51.135762,
+    "ano_fato": 1945,
+    "fato": "Finalizado em 1945, o atual prédio do Museu e Arquivo Histórico Pedro Rossi passou a servir como nova sede da Prefeitura Municipal a partir de fevereiro de 1946."
+  },
+  {
+    "id": 22,
+    "nome": "Casarão",
+    "latitude": -29.077334,
+    "longitude": -51.255936,
+    "ano_fato": 1946,
+    "fato": "Em 6 de outubro, foi assentada a primeira das 11.122 pedras de basalto para a construção do Campanário."
+  },
+  {
+    "id": 23,
+    "nome": "Câmara de Vereadores",
+    "latitude": -29.035155,
+    "longitude": -51.183362,
+    "ano_fato": 1947,
+    "fato": "Ocorreu a eleição do primeiro prefeito de forma democrática. Na ocasião, também foram feitas as eleições diretas para a 1ª Câmara de Vereadores."
+  },
+  {
+    "id": 24,
+    "nome": "Praça do Hospital",
+    "latitude": -29.027739,
+    "longitude": -51.178223,
+    "ano_fato": 1948,
+    "fato": "Em dezembro, a Organização das Nações Unidas promulgou a Declaração Universal dos Direitos Humanos."
+  },
+  {
+    "id": 25,
+    "nome": "Mirante Gelain",
+    "latitude": -28.972834,
+    "longitude": -51.26098,
+    "ano_fato": 1949,
+    "fato": "Em 30 de outubro, ocorreu a inauguração do Campanário, que possui uma altura de 55 metros."
+  },
+  {
+    "id": 26,
+    "nome": "Eremitério",
+    "latitude": -29.035904,
+    "longitude": -51.168951,
+    "ano_fato": 1950,
+    "fato": "Em fevereiro, ocorreu a instalação do relógio do Campanário."
+  },
+  {
+    "id": 28,
+    "nome": "Garagem da Prefeitura",
+    "latitude": -29.035537,
+    "longitude": -51.183864,
+    "ano_fato": 1952,
+    "fato": "Raymundo Paviani foi o segundo prefeito a ser eleito pelo povo."
+  },
+  {
+    "id": 29,
+    "nome": "São Rafael",
+    "latitude": -29.03071,
+    "longitude": -51.188548,
+    "ano_fato": 1953,
+    "fato": "Ocorreu o ato de criação da PETROBRAS - Petróleo Brasileiro S/A."
+  },
+  {
+    "id": 30,
+    "nome": "Capela Restinga",
+    "latitude": -28.979835,
+    "longitude": -51.160919,
+    "ano_fato": 1954,
+    "fato": "Instalação do primeiro posto de saúde por meio da Secretaria Estadual."
+  },
+  {
+    "id": 31,
+    "nome": "Villa Romana",
+    "latitude": -29.043169,
+    "longitude": -51.164312,
+    "ano_fato": 1955,
+    "fato": "Os apartamentos, compostos apenas por duas peças, receberam o nome de JK, em referência às iniciais do presidente Juscelino Kubitschek, eleito em 3 de outubro."
+  },
+  {
+    "id": 32,
+    "nome": "Praça do Hospital",
+    "latitude": -29.028149,
+    "longitude": -51.177972,
+    "ano_fato": 1956,
+    "fato": "Inaugurado o Hospital Nossa Senhora de Fátima."
+  },
+  {
+    "id": 33,
+    "nome": "Praça dos Pinheiros (ao lado da Florense)",
+    "latitude": -29.039982,
+    "longitude": -51.179026,
+    "ano_fato": 1957,
+    "fato": "Em fevereiro, iniciou-se a construção de Brasília, a nova capital federal do Brasil."
+  },
+  {
+    "id": 34,
+    "nome": "Final da Avenida - Parte Norte do Pórtico",
+    "latitude": -29.008641,
+    "longitude": -51.182702,
+    "ano_fato": 1958,
+    "fato": "Início das obras da ponte Passo do Zeferino (nomeada em homenagem ao primeiro balseiro, Zeferino), sobre o Rio das Antas, que liga Flores da Cunha a Antônio Prado."
+  },
+  {
+    "id": 35,
+    "nome": "Capela Fulina",
+    "latitude": -29.025063,
+    "longitude": -51.135903,
+    "ano_fato": 1959,
+    "fato": "Em agosto, Eloy Kunz fundou a Indústria de Bebidas E. Kunz e Cia., enquanto em 20 de dezembro ocorreu a primeira transmissão de sinal de televisão no Rio Grande do Sul pela TV Piratini, afiliada à Rede Tupi."
+  },
+  {
+    "id": 36,
+    "nome": "Escola de Mato Perso",
+    "latitude": -29.095758,
+    "longitude": -51.331953,
+    "ano_fato": 1960,
+    "fato": "- Em 26 de abril, a capital do Brasil foi transferida do Rio de Janeiro para Brasília.\n- Ocorreu o ato de criação da Escola Municipal de Ensino Fundamental Antônio de Souza Neto."
+  },
+  {
+    "id": 38,
+    "nome": "Capela 7 de Setembro (Antiga Escola)",
+    "latitude": -28.997096,
+    "longitude": -51.217341,
+    "ano_fato": 1962,
+    "fato": "Em 4 de dezembro, os Sindicatos dos Trabalhadores Rurais e dos Pequenos Proprietários Rurais se uniram, formando o Sindicato dos Trabalhadores Rurais de Flores da Cunha."
+  },
+  {
+    "id": 40,
+    "nome": "Praça do Parque dos Pinheiros",
+    "latitude": -29.039971,
+    "longitude": -51.171629,
+    "ano_fato": 1964,
+    "fato": "Ocorre a primeira celebração de Corpus Christi com a confecção dos tapetes de serragem colorida."
+  },
+  {
+    "id": 41,
+    "nome": "São Cristóvão (em frente à igreja)",
+    "latitude": -29.054933,
+    "longitude": -51.178893,
+    "ano_fato": 1965,
+    "fato": "É inaugurada a Cooperativa Vinícola São Pedro, representando um marco importante para a agricultura local."
+  },
+  {
+    "id": 44,
+    "nome": "Loteamento Sonda",
+    "latitude": -29.032294,
+    "longitude": -51.200696,
+    "ano_fato": 1968,
+    "fato": "Dez anos após o início da obra, em 2 de junho, foi inaugurada a ponte Passo do Zeferino, na ERS-122, entre Flores da Cunha e Antônio Prado."
+  },
+  {
+    "id": 45,
+    "nome": "Avenida 25 de Julho 1402",
+    "latitude": -29.028559,
+    "longitude": -51.18168,
+    "ano_fato": 1969,
+    "fato": "A Internet, inicialmente chamada de Arpanet, foi criada nos Estados Unidos para interligar laboratórios de pesquisa. Um professor da Universidade da Califórnia enviou o primeiro e-mail da história para um amigo em Stanford."
+  },
+  {
+    "id": 46,
+    "nome": "Estádio",
+    "latitude": -29.026298,
+    "longitude": -51.185086,
+    "ano_fato": 1970,
+    "fato": "No cenário internacional, a Seleção Brasileira de Futebol Masculino conquistou o tricampeonato, no México."
+  },
+  {
+    "id": 48,
+    "nome": "Galo",
+    "latitude": -29.024647,
+    "longitude": -51.176935,
+    "ano_fato": 1972,
+    "fato": "Iniciou-se a construção do pavilhão para as exposições da Festa da Vindima. No mesmo ano, ocorreu a Fundação do Coral Nova Trento."
+  },
+  {
+    "id": 49,
+    "nome": "APAE",
+    "latitude": -29.0289,
+    "longitude": -51.169627,
+    "ano_fato": 1973,
+    "fato": "- Ocorreu a instalação da Central Telefônica.\n- Em agosto, foi inaugurada a Associação de Pais e Amigos dos Excepcionais de Flores da Cunha."
+  },
+  {
+    "id": 50,
+    "nome": "Praça Nova Trento",
+    "latitude": -29.028122,
+    "longitude": -51.186127,
+    "ano_fato": 1974,
+    "fato": "- Instituído o Brasão do Município, de autoria de Floriano Molon.\n- O dia 26 de abril marcou a inauguração oficial do 2° grau em Flores da Cunha, na Escola Estadual de Ensino Médio São Rafael."
+  },
+  {
+    "id": 51,
+    "nome": "Campin",
+    "latitude": -29.031431,
+    "longitude": -51.161926,
+    "ano_fato": 1975,
+    "fato": "Aconteceu a primeira edição da Vindima da Canção Popular."
+  },
+  {
+    "id": 52,
+    "nome": "Escola Rio Branco",
+    "latitude": -29.030375,
+    "longitude": -51.220376,
+    "ano_fato": 1976,
+    "fato": "- Ocorreu o asfaltamento da atual ERS-122, que liga Flores da Cunha a Caxias do Sul.\n- Em 1976, são criadas as Escolas Municipais de Ensino Fundamental Rio Branco e Tiradentes."
+  },
+  {
+    "id": 54,
+    "nome": "Frei Caneca",
+    "latitude": -29.031616,
+    "longitude": -51.182978,
+    "ano_fato": 1978,
+    "fato": "Evolução na ciência. Em 25 de julho, nasceu o primeiro bebê de proveta: Louise Brown, na Inglaterra."
+  },
+  {
+    "id": 55,
+    "nome": "Poli/Núcleo",
+    "latitude": -29.0346,
+    "longitude": -51.187018,
+    "ano_fato": 1979,
+    "fato": "Em 18 de outubro é instituído o ensino fundamental obrigatório e gratuito no Brasil, expandindo o acesso à educação básica."
+  },
+  {
+    "id": 56,
+    "nome": "Praça de São Pedro",
+    "latitude": -29.055222,
+    "longitude": -51.190105,
+    "ano_fato": 1980,
+    "fato": "Foi registrado um significativo aumento na migração da população do meio rural para área urbana, impulsionado pela busca por oportunidades de emprego e melhores condições de vida na cidade."
+  },
+  {
+    "id": 57,
+    "nome": "Praça da Linha 80",
+    "latitude": -29.056227,
+    "longitude": -51.219025,
+    "ano_fato": 1981,
+    "fato": "Ocorreu a inauguração da primeira indústria de móveis do município, que impulsionou significativamente a economia local, marcando a transição da base industrial, que era predominantemente agrícola."
+  },
+  {
+    "id": 58,
+    "nome": "Rua da Vindima (sentido Parque)",
+    "latitude": -29.025098,
+    "longitude": -51.175536,
+    "ano_fato": 1982,
+    "fato": "Flores da Cunha recebeu pela primeira vez a visita de um presidente, o General João Batista Figueiredo. O presidente visitou a 5ª Fenavindima."
+  },
+  {
+    "id": 59,
+    "nome": "Rua da Vindima",
+    "latitude": -29.025352,
+    "longitude": -51.17627,
+    "ano_fato": 1983,
+    "fato": "Em setembro, o grupo de aventureiros, Fabiano Curra, Jasser dos Reis, Alexandre Todesquini e Vitor Beazutti, fundaram o Grupo Escoteiro Alberto Mattioni."
+  },
+  {
+    "id": 60,
+    "nome": "Praça da Bandeira",
+    "latitude": -29.030111,
+    "longitude": -51.182272,
+    "ano_fato": 1984,
+    "fato": "Flores da Cunha completa 60 anos de emancipação."
+  },
+  {
+    "id": 61,
+    "nome": "Escola 1º de Maio",
+    "latitude": -29.025757,
+    "longitude": -51.173166,
+    "ano_fato": 1985,
+    "fato": "- A Prefeitura muda sua sede para o Convento dos Padres Lassalistas, atualmente Centro Administrativo Ângelo Araldi.\n- Neste ano, ocorre o ato de criação da Escola Municipal de Ensino Fundamental 1° de Maio."
+  },
+  {
+    "id": 62,
+    "nome": "Praça do Monte Bello",
+    "latitude": -29.049457,
+    "longitude": -51.176681,
+    "ano_fato": 1986,
+    "fato": "Em 4 de outubro surge o Jornal O Florense, como o primeiro veículo impresso de comunicação."
+  },
+  {
+    "id": 63,
+    "nome": "Mato Perso - Parquinho",
+    "latitude": -29.095007,
+    "longitude": -51.331574,
+    "ano_fato": 1987,
+    "fato": "A primeira central telefônica chega ao interior, na comunidade de Mato Perso."
+  },
+  {
+    "id": 64,
+    "nome": "Praça do Bairro União",
+    "latitude": -29.033857,
+    "longitude": -51.19243,
+    "ano_fato": 1988,
+    "fato": "Ocorreu o ato de criação da Escola Municipal de Ensino Fundamental Tancredo de Almeida Neves."
+  },
+  {
+    "id": 65,
+    "nome": "Escola Horácio Borghetti",
+    "latitude": -29.055143,
+    "longitude": -51.185862,
+    "ano_fato": 1989,
+    "fato": "Em 16 de setembro é inaugurada a Rádio Regional do Vêneto."
+  },
+  {
+    "id": 66,
+    "nome": "Rua em frente à Escola Leonel",
+    "latitude": -29.054061,
+    "longitude": -51.191154,
+    "ano_fato": 1990,
+    "fato": "- Aconteceu a 1ª Feira de Inverno em Flores da Cunha.\n- O telefone celular começou a funcionar no Brasil."
+  },
+  {
+    "id": 67,
+    "nome": "Capela Carvalho",
+    "latitude": -29.064753,
+    "longitude": -51.290056,
+    "ano_fato": 1991,
+    "fato": "- Mato Perso torna-se distrito de Flores da Cunha após separar-se do 3° distrito de Otávio Rocha.\n- Ocorreu o ato de criação da Escola Municipal de Ensino Fundamental São José."
+  },
+  {
+    "id": 68,
+    "nome": "Praça Alfredo",
+    "latitude": -29.007872,
+    "longitude": -51.262221,
+    "ano_fato": 1992,
+    "fato": "Em 20 de março, Nova Pádua tornou-se município independente de Flores da Cunha, por meio de ato assinado pelo então governador, Alceu Collares."
+  },
+  {
+    "id": 69,
+    "nome": "Bairro Colina das Flores 1608",
+    "latitude": -29.035402,
+    "longitude": -51.174135,
+    "ano_fato": 1993,
+    "fato": "- Publicado decreto que extingue diversos educandários e centraliza primeiros em escolas na área urbana e rural.\n- Surge nas telas de cinema o filme 'Jurassic Park'."
+  },
+  {
+    "id": 70,
+    "nome": "Praça do Monte Bello",
+    "latitude": -29.049336,
+    "longitude": -51.176776,
+    "ano_fato": 1994,
+    "fato": "- Flores da Cunha ostenta o título de Maior Produtor de Vinhos do País.\n- Em 27 de maio a cidade recebe oficialmente o Corpo de Bombeiros."
+  },
+  {
+    "id": 71,
+    "nome": "Subprefeitura de Mato Perso",
+    "latitude": -29.096564,
+    "longitude": -51.332269,
+    "ano_fato": 1995,
+    "fato": "O sistema de posicionamento global (GPS), é composto por uma 'constelação' de 24 satélites lançados a partir de fevereiro de 1978. Ele foi declarado totalmente operacional em 1995."
+  },
+  {
+    "id": 72,
+    "nome": "Posto de Saúde",
+    "latitude": -29.029194,
+    "longitude": -51.180197,
+    "ano_fato": 1996,
+    "fato": "Em 22 de março ocorreu a inauguração da sede do Centro Empresarial de Flores da Cunha."
+  },
+  {
+    "id": 73,
+    "nome": "Lagoa Bella",
+    "latitude": -29.000279,
+    "longitude": -51.195684,
+    "ano_fato": 1997,
+    "fato": "Surge a Associação dos Produtores de Arte e Cultura (APAC)."
+  },
+  {
+    "id": 74,
+    "nome": "Galo",
+    "latitude": -29.024589,
+    "longitude": -51.176995,
+    "ano_fato": 1998,
+    "fato": "Ocorreu a inauguração do monumento do 'Galo', no Parque da Vindima Eloy Kunz."
+  },
+  {
+    "id": 75,
+    "nome": "Rua da Vindima",
+    "latitude": -29.02435,
+    "longitude": -51.175152,
+    "ano_fato": 1999,
+    "fato": "Ocorreu a 9ª Festa Nacional da Vindima."
+  },
+  {
+    "id": 76,
+    "nome": "Praça do Hospital",
+    "latitude": -29.02784,
+    "longitude": -51.17777,
+    "ano_fato": 2000,
+    "fato": "Comemorações dos 500 anos do descobrimento do Brasil."
+  },
+  {
+    "id": 77,
+    "nome": "Trevo da Keko",
+    "latitude": -29.054158,
+    "longitude": -51.209672,
+    "ano_fato": 2001,
+    "fato": "Em 11 de setembro, um ataque terrorista às Torres Gêmeas em Nova York e ao Pentágono, em Washington D.C., marcou um trágico momento na história contemporânea."
+  },
+  {
+    "id": 78,
+    "nome": "Escola Irmã Tarcísia",
+    "latitude": -29.035789,
+    "longitude": -51.186069,
+    "ano_fato": 2002,
+    "fato": "Ocorre o ato de criação da Escola Municipal de Ensino Infantil Irmã Tarcísia."
+  },
+  {
+    "id": 79,
+    "nome": "Capela Santa Libera",
+    "latitude": -28.993603,
+    "longitude": -51.159493,
+    "ano_fato": 2003,
+    "fato": "Em 15 de junho, o Museu e Arquivo Histórico passou a se chamar Museu e Arquivo Histórico Pedro Rossi."
+  },
+  {
+    "id": 80,
+    "nome": "Parque da Vindima / Galo - UCS",
+    "latitude": -29.024548,
+    "longitude": -51.176177,
+    "ano_fato": 2004,
+    "fato": "- Inaugurada a Escola de Gastronomia UCS, a Icif.\n- Ocorreu o ato de criação da Escola Municipal de Ensino Fundamental Leonel de Moura Brizola."
+  },
+  {
+    "id": 81,
+    "nome": "Campin",
+    "latitude": -29.031489,
+    "longitude": -51.1624,
+    "ano_fato": 2005,
+    "fato": "São comemorados os 130 anos da chegada dos primeiros imigrantes italianos ao Rio Grande do Sul."
+  },
+  {
+    "id": 82,
+    "nome": "Centro de Convivência Frei Salvador",
+    "latitude": -29.035773,
+    "longitude": -51.185072,
+    "ano_fato": 2006,
+    "fato": "A plataforma eletrônica de rede social 'Twitter' foi criada e ganhou popularidade e influência, sendo atualmente conhecida como X."
+  },
+  {
+    "id": 83,
+    "nome": "São Rafael",
+    "latitude": -29.031178,
+    "longitude": -51.187745,
+    "ano_fato": 2007,
+    "fato": "Realizada a primeira transmissão oficial de sinal de TV digital no Brasil, na cidade de São Paulo."
+  },
+  {
+    "id": 84,
+    "nome": "Poliesportivo",
+    "latitude": -29.034279,
+    "longitude": -51.186368,
+    "ano_fato": 2008,
+    "fato": "Em agosto de 2008 ocorreu a 29° edição dos Jogos Olímpicos de Verão, em Pequim."
+  },
+  {
+    "id": 85,
+    "nome": "Parque São Francisco",
+    "latitude": -29.023325,
+    "longitude": -51.17181,
+    "ano_fato": 2009,
+    "fato": "Em 28 de outubro é criado o Parque Natural São Francisco de Assis."
+  },
+  {
+    "id": 86,
+    "nome": "Rua Severo Ravisoni - Kashanoski",
+    "latitude": -29.03213,
+    "longitude": -51.184056,
+    "ano_fato": 2010,
+    "fato": "Censo Demográfico do Brasil de 2010 foi a 12ª operação censitária realizada em território brasileiro, identificando uma população residente de 27.126 pessoas em Flores da Cunha."
+  },
+  {
+    "id": 87,
+    "nome": "Frei Caneca",
+    "latitude": -29.031523,
+    "longitude": -51.18273,
+    "ano_fato": 2011,
+    "fato": "É implantado o ensino médio na Escola Estadual de Ensino Médio Frei Caneca."
+  },
+  {
+    "id": 88,
+    "nome": "Praça do Bairro São José",
+    "latitude": -29.029221,
+    "longitude": -51.17068,
+    "ano_fato": 2012,
+    "fato": "Ocorreu o ato de criação da Escola Municipal de Educação Infantil Santa Teresinha."
+  },
+  {
+    "id": 89,
+    "nome": "Capela do Carmo",
+    "latitude": -28.964374,
+    "longitude": -51.183108,
+    "ano_fato": 2013,
+    "fato": "Durante as celebrações de 138 anos da imigração italiana, foi inaugurado o Monumento Leão de São Marcos."
+  },
+  {
+    "id": 90,
+    "nome": "Praça do Hospital",
+    "latitude": -29.028078,
+    "longitude": -51.178146,
+    "ano_fato": 2014,
+    "fato": "Brasil é sede da Copa do Mundo FIFA pela segunda vez. A primeira vez que o país sediou o evento foi em 1950."
+  },
+  {
+    "id": 91,
+    "nome": "Procon - Rua Borges de Medeiros",
+    "latitude": -29.030477,
+    "longitude": -51.182429,
+    "ano_fato": 2015,
+    "fato": "Ocorre a revitalização da Praça da Bandeira."
+  },
+  {
+    "id": 92,
+    "nome": "Estádio",
+    "latitude": -29.026016,
+    "longitude": -51.185104,
+    "ano_fato": 2016,
+    "fato": "Pela primeira vez, o Brasil é sede dos Jogos Olímpicos de Verão."
+  },
+  {
+    "id": 93,
+    "nome": "Cemitério",
+    "latitude": -29.032836,
+    "longitude": -51.171526,
+    "ano_fato": 2017,
+    "fato": "O Rio Grande do Sul sofreu com uma estiagem devido ao fenômeno La Niña, resultando em um déficit hídrico."
+  },
+  {
+    "id": 94,
+    "nome": "Trevo da Keko",
+    "latitude": -29.054235,
+    "longitude": -51.209171,
+    "ano_fato": 2018,
+    "fato": "O ano foi marcado por uma série de tragédias naturais nos continentes, como incêndios, tsunamis, erupções vulcânicas, inundações e terremotos."
+  },
+  {
+    "id": 95,
+    "nome": "Praça do Hospital",
+    "latitude": -29.027731,
+    "longitude": -51.177848,
+    "ano_fato": 2019,
+    "fato": "Em 31 de dezembro, a Organização Mundial da Saúde (OMS) foi alertada sobre vários casos de pneumonia, que logo evoluíram para uma pandemia, ocasionada pelo COVID-19."
+  },
+  {
+    "id": 96,
+    "nome": "Próximo ao Chefebio",
+    "latitude": -29.034573,
+    "longitude": -51.18339,
+    "ano_fato": 2020,
+    "fato": "Em 17 de dezembro, a Casa da Cultura foi entregue à comunidade. O espaço recebeu o nome do escritor florense Flávio Luis Ferrarini."
+  },
+  {
+    "id": 97,
+    "nome": "Praça do Hospital",
+    "latitude": -29.027922,
+    "longitude": -51.178003,
+    "ano_fato": 2021,
+    "fato": "Em janeiro, iniciou-se a vacinação contra COVID-19. As enfermeiras Neusa Maria Bonatto Stolfo e Ana Paula Toigo foram as primeiras pessoas a receberem a vacina contra a COVID-19 em Flores da Cunha."
+  },
+  {
+    "id": 98,
+    "nome": "Linha 80",
+    "latitude": -29.056059,
+    "longitude": -51.219354,
+    "ano_fato": 2022,
+    "fato": "É lançada a tecnologia 5G, prometendo maior velocidade na conectividade móvel. Enquanto isso, a inteligência artificial, promete a automatização de tarefas realizadas pelos seres humanos."
+  },
+  {
+    "id": 100,
+    "nome": "Praça da Bandeira",
+    "latitude": -29.029802,
+    "longitude": -51.181856,
+    "ano_fato": 2024,
+    "fato": "Flores da Cunha celebra seu centenário de emancipação política, os 15 anos de existência do Parque Natural São Francisco de Assis e a fundação da Guarda Civil Municipal de Flores da Cunha."
+  }
+]
